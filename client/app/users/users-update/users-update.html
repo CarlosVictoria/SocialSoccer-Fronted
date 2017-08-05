@@ -1,0 +1,25 @@
+<div class="container">
+    <div>This is usuarios-update view</div>
+
+    <form name="userForm" ng-submit="vm.updateUser()">
+
+        <label for="">Nombre</label>
+        <input type="text" ng-model="vm.user.nombres">
+
+        <label for="">Apellido</label>
+        <input type="text" ng-model="vm.user.apellidos">
+
+        <label for="">Email</label>
+        <input type="text" ng-model="vm.user.email">
+
+        <label for="">tipo Documento</label>
+        <input type="text" ng-model="vm.user.idTiposDocumentos.descripcion">
+
+
+        <label for="">numero Documento</label>
+        <input type="text" ng-model="vm.user.numDocumento">
+
+        <button type="submit">Actualizar</button>
+
+    </form>
+</div>

@@ -1,0 +1,55 @@
+.work {
+    background: grey;
+    color: #00dbff;
+    text-align: center;
+    padding-top: 2em;
+
+}
+.Work-x{
+  background-size: 100%;
+  background-image: url("../../assets/images/main/li.jpg");
+  text-align: -webkit-center;
+  background-repeat: no-repeat;
+}
+
+.work-item {
+    display: inline-flex;
+    margin-right: 0em;
+    margin-left: 1em;
+
+
+}
+
+.Work-title {
+    padding-top: 1em;
+}
+
+.work-descripcion {
+    color: white;
+    font-style: italic;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.work-image {
+    width: 350px;
+    border-radius: 5em;
+    margin-left: 8em;
+    margin-right: 8em;
+    padding: 1.5em;
+    display: inline-block;
+}
+
+.curso {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+@media screen and (max-width:480px) {
+    .work-image {
+        width: 226px;
+        padding: 0;
+        margin: 0;
+        border-radius: 20px;
+    }
+}

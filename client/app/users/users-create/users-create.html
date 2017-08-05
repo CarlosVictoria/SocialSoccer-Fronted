@@ -1,0 +1,39 @@
+<div class="login-register">
+
+    <form class="Start-register" ng-submit="vm.createUser()">
+        <h2 class="legal_name">Registro</h2><br>
+        <!--label>id</label>
+        <input type="text" ng-model="vm.user.id_usuarios"-->
+
+        <label>Nombres</label>
+        <input type="text" ng-model="vm.user.nombres">
+
+        <label>Apellidos</label>
+        <input type="text" ng-model="vm.user.apellidos">
+
+        <label>Tipo Documento</label>
+        <select >
+           <option ng-model="vm.user.tipoDocumento.id">...</option>
+           <option ng-model="vm.user.tipoDocumento.id">C.C</option>
+           <option ng-model="vm.user.tipoDocumento.id">T.I</option>
+        </select>
+
+        <p></p>
+        <label>Numero Documento</label>
+        <input type="text" ng-model="vm.user.numDocumento">
+
+        <label>Sexo</label>
+        <input type="text" ng-model="vm.user.sexo">
+
+        <label>correo</label>
+        <input type="text" ng-model="vm.user.email">
+
+        <label>Contraseña</label>
+        <input type="password" ng-model="vm.user.password">
+
+        <label>Confirmar Contraseña</label>
+        <input type="password" ng-model="vm.user.password2">
+
+        <button type="submit">crear</button>
+    </form>
+</div>

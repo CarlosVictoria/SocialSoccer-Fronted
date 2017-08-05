@@ -1,0 +1,12 @@
+.Table-tittle, .Table-item{
+	display: inline-block;
+	width: 7em;
+	text-align: center;
+}
+.Table-tittle{
+	font-weight: bold;
+}
+
+.container{
+	
+}
