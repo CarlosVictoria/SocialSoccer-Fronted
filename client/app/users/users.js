@@ -10,9 +10,9 @@ angular.module('socialSoccerApp')
       .state('users-create', {
           url: '/users-create',
           template: '<users-create></users-create>'
-        })
-        .state('users-update', {
-            url: '/users-update/:idUsuario',
-            template: '<users-update></users-update>'
-          });
+      })
+      .state('users-update', {
+          url: '/users-update/:idUsers',
+          template: '<users-update></users-update>'
+      });
   });

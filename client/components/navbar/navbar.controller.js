@@ -2,6 +2,11 @@
 
 class NavbarController {
   //start-non-standard
+
+  constructor(authService){
+    this.authService = authService;
+  }
+  
   menu = [{
     'title': 'Home',
     'state': 'main'
@@ -10,8 +15,6 @@ class NavbarController {
   isCollapsed = true;
   //end-non-standard
 
-  constructor() {
-    }
 }
 
 angular.module('socialSoccerApp')

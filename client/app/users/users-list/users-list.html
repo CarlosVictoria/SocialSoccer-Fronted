@@ -1,28 +1,24 @@
-<section class="container" ng-cloak="">
-
-
-    <table class="table table-hover">
-        <thead>
-            <tr>
-                <th>Nombres</th>
-                <th>Apellidos</th>
-                <th>Email</th>
-                <th>tipo Documento</th>
-                <th>numero Documento</th>
-
-                <th>Acción</th>
-
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="item in vm.usuarios">
-                <td>{{item.nombres}}</td>
-                <td>{{item.apellidos}}</td>
-                <td>{{item.email}}</td>
-                <td>{{item.idTiposDocumentos.descripcion}}</td>
-                <td>{{item.numDocumento}}</td>
-                <td><a class="btn btn-primary" ui-sref="users-update({idUsuario:item.idUsuarios})">Editar</a></td>
-            </tr>
-        </tbody>
-    </table>
+<section class="container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Email</th>
+        <th>Tipo Documento</th>
+        <th>N.documento</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in vm.usuarios">
+        <td>{{item.names}}</td>
+        <td>{{item.lastNames}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.idDocumentTypes.description}}</td>
+        <td>{{item.numDocument}}</td>
+        <td><a class="btn btn-primary" ui-sref="users-update({idUsers:item.idUsers})">Editar</a></td>
+      </tr>
+    </tbody>
+  </table>
 </section>

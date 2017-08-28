@@ -23,22 +23,17 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(client) app/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,client}) app/app.css -->
     <link rel="stylesheet" href="app/app.css">
     <!-- build:css({.tmp,client}) app/main/main.css -->
     <link rel="stylesheet" href="app/main/main.css">
-    <!-- build:css({.tmp,client}) app/main/navbar.css -->
-    <link rel="stylesheet" href="components/navbar/navbar.css">
     <!-- build:css({.tmp,client}) app/main/main.css -->
     <link rel="stylesheet" href="components/footer/footer.css">
-    <!-- build:css({.tmp,client}) app/main/login.css -->
-    <link rel="stylesheet" href="app/login/login.css">
-    <!-- build:css({.tmp,client}) app/users/users-list/users-list.css -->
-    <link rel="stylesheet" href="app/users/users-list/users-list.css">
 
-      <link rel="stylesheet" href="app/courts/courts.css">
+    <link rel="stylesheet" href="app/courts/courts.css">
 
     <!-- injector:css -->
     <!-- endinjector -->
@@ -87,19 +82,28 @@
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/lodash/dist/lodash.compat.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/satellizer/dist/satellizer.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
     <!-- build:js(.tmp) app/app.js -->
     <script src="app/app.js"></script>
     <!-- injector:js -->
     <script src="components/util/util.module.js"></script>
     <script src="app/app.constant.js"></script>
+    <script src="app/cities/cities.service.js"></script>
     <script src="app/courts/courts.controller.js"></script>
     <script src="app/courts/courts.js"></script>
     <script src="app/courts/courts.service.js"></script>
+    <script src="app/departments/departments.service.js"></script>
+    <script src="app/document_types/document_types.service.js"></script>
     <script src="app/login/login.controller.js"></script>
     <script src="app/login/login.js"></script>
-    <script src="app/login/login.service.js"></script>
     <script src="app/main/main.controller.js"></script>
     <script src="app/main/main.js"></script>
     <script src="app/users/users-create/users-create.controller.js"></script>
@@ -107,6 +111,7 @@
     <script src="app/users/users-update/users-update.controller.js"></script>
     <script src="app/users/users.js"></script>
     <script src="app/users/users.service.js"></script>
+    <script src="auth/auth.service.js"></script>
     <script src="components/footer/footer.directive.js"></script>
     <script src="components/navbar/navbar.controller.js"></script>
     <script src="components/navbar/navbar.directive.js"></script>

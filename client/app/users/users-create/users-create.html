@@ -1,39 +1,233 @@
-<div class="login-register">
+<div class="Register">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
+        <form class="Register-form" name="registerForm" ng-submit="vm.createUser()">
 
-    <form class="Start-register" ng-submit="vm.createUser()">
-        <h2 class="legal_name">Registro</h2><br>
-        <!--label>id</label>
-        <input type="text" ng-model="vm.user.id_usuarios"-->
+          <div layout="row" layout-align="start center">
+            <i class="fa fa-futbol-o" aria-hidden="true"></i>
+            <h3 class="Register-title">Crea tu Cuenta</h3>
+          </div>
 
-        <label>Nombres</label>
-        <input type="text" ng-model="vm.user.nombres">
+          <br>
 
-        <label>Apellidos</label>
-        <input type="text" ng-model="vm.user.apellidos">
+          <div layout="row">
+            <md-input-container flex="45">
+              <label class="Register-label">Tipo Documento</label>
+              <!--<md-icon md-font-icon="fa fa-id-badge"></md-icon>-->
+              <md-select name="typeDocument" ng-model="vm.user.idDocumentTypes.idDocumentTypes" required>
+                 <md-option ng-value="{{item.idDocumentTypes}}" ng-repeat="item in vm.documentType">
+                   {{item.description}}
+                 </md-option>
+              </md-select>
+              <div ng-messages="registerForm.typeDocument.$error">
+                <div ng-message="required">El tipo de documento es requerido.</div>
+              </div>
+            </md-input-container>
 
-        <label>Tipo Documento</label>
-        <select >
-           <option ng-model="vm.user.tipoDocumento.id">...</option>
-           <option ng-model="vm.user.tipoDocumento.id">C.C</option>
-           <option ng-model="vm.user.tipoDocumento.id">T.I</option>
-        </select>
+            <div flex="10">
+              <!-- Spacer //-->
+            </div>
 
-        <p></p>
-        <label>Numero Documento</label>
-        <input type="text" ng-model="vm.user.numDocumento">
+            <md-input-container flex="45">
+              <!--<md-icon md-font-icon="fa fa-id-card-o"></md-icon>-->
+              <label>Número de documento</label>
+              <input name="document" ng-model="vm.user.numDocument" required
+              ng-pattern="/^[0-9]*$/" md-maxlength="15">
+               <div ng-messages="registerForm.document.$error">
+                 <div ng-message="required">El número de documento es requerido.</div>
+                 <div ng-message="pattern">Por favor ingrese un número de documento válido.</div>
+                 <div ng-message="md-maxlength">El número debe tener menos de 15 caracteres de longitud.</div>
+               </div>
+            </md-input-container>
+          </div>
 
-        <label>Sexo</label>
-        <input type="text" ng-model="vm.user.sexo">
+          <div layout="row" layout-align="space-between center">
+            <md-input-container flex="45">
+              <!--<md-icon md-font-icon="fa fa-user-o"></md-icon>-->
+              <label>Nombres</label>
+              <input ng-model="vm.user.names" name="name" ng-pattern="/^[a-zA-Z\s]*$/"
+              required minlength="3" maxlength="45">
+              <div ng-messages="registerForm.name.$error">
+                <div ng-message="pattern">Su nombre no puede contener números.</div>
+                <div ng-message-exp="['maxlength','minlength','required']">
+                  Su nombre debe contener entre 3 a 45 caracteres.
+                </div>
+              </div>
+            </md-input-container>
 
-        <label>correo</label>
-        <input type="text" ng-model="vm.user.email">
+            <md-input-container flex="45">
+              <!--<md-icon md-font-icon="fa fa-user-o"></md-icon>-->
+              <label>Apellidos</label>
+              <input ng-model="vm.user.lastNames" ng-pattern="/^[a-zA-Z\s]*$/"
+              required minlength="3" maxlength="45" name="lastName">
+              <div ng-messages="registerForm.lastName.$error">
+                <div ng-message="pattern">Su apellido no puede contener números.</div>
+                <div ng-message-exp="['maxlength','minlength','required']">
+                  Su apellido debe contener entre 3 a 45 caracteres.
+                </div>
+              </div>
+            </md-input-container>
+          </div>
 
-        <label>Contraseña</label>
-        <input type="password" ng-model="vm.user.password">
+          <div layout="row">
+            <md-input-container flex="45">
+              <!--<md-icon md-font-icon="fa fa-unlock-alt"></md-icon>-->
+              <label>Contraseña</label>
+              <input type="password" ng-model="vm.user.password" minlength="4"
+              required name="password">
+              <div ng-messages="registerForm.password.$error">
+                <div ng-message-exp="['required', 'minlength']">
+                  Su password debe tener al menos 4 caracteres de longitud.
+                </div>
+              </div>
+            </md-input-container>
 
-        <label>Confirmar Contraseña</label>
-        <input type="password" ng-model="vm.user.password2">
+            <div flex="10">
+              <!-- Spacer //-->
+            </div>
 
-        <button type="submit">crear</button>
-    </form>
+            <md-input-container flex="45">
+              <!--<md-icon md-font-icon="fa fa-venus-mars"></md-icon>-->
+              <label>Género</label>
+              <md-select name="gender" ng-model="vm.user.gender" required>
+                <md-option value="M">Masculino</md-option>
+                <md-option value="F">Femenino</md-option>
+                <md-option value="O">Otro</md-option>
+              </md-select>
+              <div ng-messages="registerForm.gender.$error">
+                <div ng-message="required">El género es requerido.</div>
+              </div>
+            </md-input-container>
+          </div>
+
+            <md-input-container class="md-block">
+              <!--<md-icon md-font-icon="fa fa-envelope"></md-icon>-->
+              <label>Correo</label>
+              <input ng-model="vm.user.email" name="email" required minlength="10"
+              maxlength="100" ng-pattern="/^.+@.+\..+$/">
+              <div ng-messages="registerForm.email.$error" role="alert">
+                <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                  Tu email debe contener entre 10 y 100 caracteres de longitud y debe lucir como
+                  una direccion de email.
+                </div>
+              </div>
+            </md-input-container>
+
+          <div layout="row" layout-align="space-between center">
+            <md-input-container flex="45">
+              <!--<md-icon md-svg-src="../../../assets/images/information/colombia.svg"></md-icon>-->
+              <label>Departamento</label>
+              <md-select name="department" ng-model="vm.idDepartment" ng-change="vm.getCities()" required>
+                <md-option ng-value="{{item.idDepartments}}" ng-repeat="item in vm.department">
+                  {{item.name}}
+                </md-option>
+              </md-select>
+              <div ng-messages="registerForm.department.$error">
+                <div ng-message="required">Por favor ingrese su departamento de residencia.</div>
+              </div>
+            </md-input-container>
+
+            <md-input-container flex="45">
+              <!--<md-icon md-font-icon="fa fa-map-marker"></md-icon>-->
+              <label>Ciudad</label>
+              <md-select name="city" ng-model="vm.user.idCities.idCities" required>
+                <md-option ng-value="{{item.idCities}}" ng-repeat="item in vm.cities">
+                  {{item.name}}
+                </md-option>
+              </md-select>
+              <div ng-messages="registerForm.city.$error">
+                <div ng-message="required">Por favor ingrese su ciudad de residencia.</div>
+              </div>
+            </md-input-container>
+          </div>
+
+          <div class="text-center">
+            <md-button class="Register-button md-raised md-primary" type="submit">Crear cuenta</md-button>
+          </div>
+        </form>
+        <!--<form class="Register-form" ng-submit="vm.createUser()">
+
+          <div class="text-center">
+            <h2 class="Register-title">Registro</h2>
+          </div>
+          <br>
+
+          <div class="form-group">
+            <label class="Register-label">Tipo Documento</label>
+            <select class="form-control" name="typeDocument"  ng-model="vm.user.idDocumentTypes.idDocumentTypes">
+               <option ng-value="{{item.idDocumentTypes}}" ng-repeat="item in vm.documentType">
+                 {{item.description}}
+               </option>
+               <option value="" disabled selected>Tipo de documento</option>
+            </select>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-6 col-md-6">
+              <div class="form-group">
+                <label class="Register-label">Numero de Documento</label>
+                <input class="form-control" type="text" ng-model="vm.user.numDocument">
+              </div>
+
+              <div class="form-group">
+                <label class="Register-label">Nombres</label>
+                <input class="form-control" type="text" ng-model="vm.user.names">
+              </div>
+
+              <div class="form-group">
+                <label class="Register-label">Departamento</label>
+                <select class="form-control" name="department" ng-model="vm.idDepartment" ng-change="vm.getCities()">
+                  <option ng-value="{{item.idDepartments}}" ng-repeat="item in vm.department">
+                    {{item.name}}
+                  </option>
+                  <option value="" disabled selected>Selecciona tu departamento</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="Register-label">Correo</label>
+                <input class="form-control" type="email" ng-model="vm.user.email">
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-md-6">
+              <div class="form-group">
+                <label class="Register-label">Género</label>
+                <select class="form-control" name="gender" ng-model="vm.user.gender">
+                  <option value="M">Masculino</option>
+                  <option value="F">Femenino</option>
+                  <option value="O">Otro</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="Register-label">Apellidos</label>
+                <input class="form-control" type="text" ng-model="vm.user.lastNames">
+              </div>
+
+              <div class="form-group">
+                <label class="Register-label">Ciudad</label>
+                <select class="form-control" name="city" ng-model="vm.user.idCities.idCities">
+                  <option ng-value="{{item.idCities}}" ng-repeat="item in vm.cities">
+                    {{item.name}}
+                  </option>
+                  <option value="" disabled selected>Selecciona tu ciudad</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="Register-label">Contraseña</label>
+                <input class="form-control" type="password" ng-model="vm.user.password">
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <button class="btn btn-primary btn-lg" type="submit">Crear cuenta</button>
+          </div>
+        </form>-->
+      </div>
+    </div>
+  </div>
 </div>

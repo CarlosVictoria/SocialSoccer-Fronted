@@ -1,7 +1,7 @@
 'use strict';
 function usersService(API, $resource){
-  return $resource(API + '/usuarios/:id',{
-    id:'@id'
+  return $resource(API + '/api/users/:idUsers',{
+    id:'@idUsers'
   },{
     update:{
       method:'PUT'
@@ -11,4 +11,3 @@ function usersService(API, $resource){
 angular.module('socialSoccerApp')
   .factory('usersService', usersService);
 usersService.inject = ['API','$resource'];
-
