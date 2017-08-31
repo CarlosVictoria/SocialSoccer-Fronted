@@ -42,7 +42,7 @@ class UsersUpdateComponent {
   updateUser() {
     this.usersService.update({idUsers:this.user.idUsers},this.user).$promise
     .then(response => {
-        console.log("Usuario Actualizado")
+        console.log("Usuario Actualizado" );
         this.$state.go('users-list');
     })
     .catch(err => console.error(err));

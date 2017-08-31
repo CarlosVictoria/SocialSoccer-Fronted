@@ -5,11 +5,11 @@
       <div class="col-xs-6">
         <h1>Social Soccer</h1>
       </div>
-      <div class="col-xs-6 text-right">
+      <div class="col-xs-12 col-md-12 col-lg-12 text-right">
         <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navMenu" >
           <i class="fa fa-bars" aria-hidden="true"></i>
         </button>
-        <md-button ng-show="!nav.authService.isAuthenticated()" ui-sref="users-create" class="">Registrarse</md-button>
+        <md-button ng-show="!nav.authService.isAuthenticated()" ui-sref="users-create" class="hidden-xs hidden-md hiddden-sm">Registrarse</md-button>
         <md-button ng-if="!nav.authService.isAuthenticated()" ui-sref="login" class="">Iniciar Sesión</md-button>
       </div>
     </div>
@@ -39,8 +39,13 @@
             <md-nav-item md-nav-sref="goto('page3')" name="page3">
               Servicios
             </md-nav-item>
+
             <md-nav-item md-nav-sref="users-list" ng-if="nav.authService.isAdmin()" name="page4">
               Mis usuarios
+            </md-nav-item>
+
+            <md-button ng-show="!nav.authService.isAuthenticated()" ui-sref="users-create" class="visible-xs hidden-lg"name="page5">Registrarse</md-button>
+
             </md-nav-item>
           </md-nav-bar>
         </div>
