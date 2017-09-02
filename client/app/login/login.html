@@ -7,11 +7,11 @@
 
           <!--Angular Material-->
           <md-input-container class="md-block">
-            <input type="text" placeholder="Número de Documento" md-no-asterisk ng-pattern="/^[0-9]*$/"
-             md-maxlength="15" required name="name" ng-model="vm.user.numDocument">
+            <input type="text" placeholder="Email" md-no-asterisk ng-pattern="/^.+@.+\..+$/"
+             md-maxlength="100" required name="name" ng-model="vm.user.email">
             <div ng-messages="loginForm.name.$error">
-              <div ng-message="required">El número de documento es requerido.</div>
-              <div ng-message="pattern">Por favor ingrese un número de documento válido.</div>
+              <div ng-message="required">El email es requerido.</div>
+              <div ng-message="pattern">Por favor ingrese un email válido.</div>
               <div ng-message="md-maxlength">El número debe tener menos de 15 caracteres de longitud.</div>
             </div>
           </md-input-container>
