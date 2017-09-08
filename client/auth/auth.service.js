@@ -5,6 +5,7 @@ function authService($auth,$state) {
   var Auth = {
     login:login,
  		logout:logout,
+    userlog: userlog,
  		isAdmin:isAdmin,
 		isUser:isUser,
 		isAuthenticated:isAuthenticated
@@ -29,6 +30,10 @@ function authService($auth,$state) {
         $state.go('main');
       })
     }
+  }
+
+  function userlog(){
+    return $auth.getPayload().user;
   }
 
   function isAdmin(){
