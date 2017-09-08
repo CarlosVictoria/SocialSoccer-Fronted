@@ -11,6 +11,8 @@
         </button>
         <md-button ng-show="!nav.authService.isAuthenticated()" ui-sref="users-create" class="hidden-xs hidden-md hiddden-sm">Registrarse</md-button>
         <md-button ng-if="!nav.authService.isAuthenticated()" ui-sref="login" class="">Iniciar Sesión</md-button>
+        <md-button name="button" type="button" ng-show="nav.authService.isAuthenticated()" ng-click="!nav.authService.logout()" ui-sref="main" class="">Cerrar Sesion</md-button>
+        <md-button ng-if="nav.authService.isAuthenticated()" class="">{{nav.authService.userlog()}}</md-button>
       </div>
     </div>
   </div>
@@ -22,23 +24,23 @@
     <div class="container">
       <div class="row AlignNavbar">
         <div class="col-xs-12 col-xs-offset-0 col-md-6 col-md-offset-0 AlignItemsNavbar">
-          <!--<ul class="nav navbar-nav">
+          <!--ul class="nav navbar-nav visible-xs ">
             <li><a href="main" class="navbar-link text-center">Inicio</a></li>
             <li><a href="login" class="navbar-link text-center">Nosotros</a></li>
             <li><a href="users-create" class="navbar-link text-center">Servicios</a></li>
             <li ng-if="nav.authService.isAdmin()"><a ui-sref="users-list" class="navbar-link text-center">Mis usuarios</a></li>
             <li ng-show="nav.authService.isAuthenticated()"><a ng-click="nav.authService.logout()" href="#">Salir</a></li>
-          </ul>-->
-          <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+          </ul-->
+          <md-nav-bar md-selected-nav-item="currentNavItem " nav-bar-aria-label="navigation links">
             <md-nav-item md-nav-sref="main" name="page1">
               Inicio
             </md-nav-item>
-            <md-nav-item md-nav-sref="users-create" name="page2">
+            <md-nav-item md-nav-sref="nosotros" name="page2">
               Nosotros
             </md-nav-item>
-            <md-nav-item md-nav-sref="goto('page3')" name="page3">
+            <!--md-nav-item md-nav-sref="goto('page3')" name="page3">
               Servicios
-            </md-nav-item>
+            </md-nav-item-->
 
             <md-nav-item md-nav-sref="users-list" ng-if="nav.authService.isAdmin()" name="page4">
               Mis usuarios
