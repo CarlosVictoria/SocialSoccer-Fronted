@@ -1,0 +1,142 @@
+<div class="Register">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
+        <form class="Register-form" name="registerForm" ng-submit="vm.createReservations()">
+
+          <div layout="row" layout-align="start center">
+            <i class="fa fa-book fa-2x" aria-hidden="true"></i>
+            <h3 class="Register-title">Realiza tu Reserva</h3>
+          </div>
+
+          <br>
+
+          <div layout="row">
+            <md-input-container flex="45">
+              <label for="">Fecha</label>
+              		<div class="form-group">
+              			<input type="text" class="form-control" ng-model="vm.reservations.date" required>
+              		</div>
+              <div ng-messages="registerForm.typeDocument.$error">
+                <div ng-message="required">La fecha es requerida</div>
+              </div>
+            </md-input-container>
+            <div flex="10">
+
+            </div>
+          </div>
+          <div layout="row">
+            <md-input-container flex="45">
+              <label for="">Hora Inicial</label>
+              		<div class="form-group">
+              			<input type="text" class="form-control" ng-model="vm.reservations.initialHour" required>
+              		</div>
+              <div ng-messages="registerForm.typeDocument.$error">
+                <div ng-message="required">La hora es requerida</div>
+              </div>
+            </md-input-container>
+            <div flex="10">
+
+            </div>
+          </div>
+          <div layout="row">
+            <md-input-container flex="45">
+              <label for="">Hora Final</label>
+              		<div class="form-group">
+              			<input type="text" class="form-control" ng-model="vm.reservations.finalHour" required>
+              		</div>
+              <div ng-messages="registerForm.typeDocument.$error">
+                <div ng-message="required">La hora es requerida</div>
+              </div>
+            </md-input-container>
+            <div flex="10">
+
+            </div>
+          </div>
+          <div layout="row">
+            <md-input-container flex="45">
+              <label for="">Usuario</label>
+                  <div class="form-group">
+                    <input type="text" class="form-control" ng-model="vm.reservations.idUsers.idUsers" required>
+                  </div>
+              <div ng-messages="registerForm.typeDocument.$error">
+                <div ng-message="required">El usuario es requerido</div>
+              </div>
+            </md-input-container>
+            <div flex="10">
+
+            </div>
+          </div>
+          <div layout="row">
+            <md-input-container flex="45">
+              <label for="">Cancha</label>
+                  <div class="form-group">
+                    <input type="text" class="form-control" ng-model="vm.reservations.idSoccerFields.idSoccerFields" required>
+                  </div>
+              <div ng-messages="registerForm.typeDocument.$error">
+                <div ng-message="required">La cancha es requerida</div>
+              </div>
+            </md-input-container>
+            <div flex="10">
+
+            </div>
+          </div>
+
+
+          <!--div layout="row" layout-align="space-between center">
+            <md-input-container flex="45">
+
+              <label>Establecimiento</label>
+              <md-select name="establishments" ng-model="vm.idEstablishments" ng-change="" required>
+                <md-option ng-value="{{item.idEstablishments}}" ng-repeat="item in vm.establishments">
+                  {{item.name}}
+                </md-option>
+              </md-select>
+              <div ng-messages="registerForm.department.$error">
+                <div ng-message="required">Por favor ingrese un establecimiento.</div>
+              </div>
+            </md-input-container>
+
+            <md-input-container flex="45">
+              <label>Cancha</label>
+              <md-select name="cancha" ng-model="vm.soccerFields.idSoccerFields" required>
+                <md-option ng-value="{{item.idSoccerFields}}" ng-repeat="item in vm.soccerFields">
+                  {{item.name}}
+                </md-option>
+              </md-select>
+              <div ng-messages="registerForm.city.$error">
+                <div ng-message="required">Por favor ingrese una cancha.</div>
+              </div>
+            </md-input-container>
+          </div-->
+
+          <div class="text-center">
+            <md-button  class="Register-button md-raised md-primary" type="submit">Reservar</md-button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--form name="userForm" ng-submit="vm.createReservations()">
+  <label>Fecha</label>
+  <input type="date" name="fecha" ng-model="vm.reservations.date">
+
+  <label>Hora Inicial</label>
+  <input type="text" name="Hora de inicio" ng-model="vm.reservations.initialHour">
+
+  <label>Hora Final</label>
+  <input type="text" name="Hora de fin" ng-model="vm.reservations.finalHour">
+
+  <label>Usuario</label>
+  <input type="text" name="idUsuario" ng-model="vm.reservations.idUsers.idUsers">
+
+  <label>Cancha</label>
+  <input type="text" name="cancha" ng-model="vm.reservations.idSoccerFields.idSoccerFields">
+
+
+
+  <button type="submit" name="button">Reservar</button>
+</form-->

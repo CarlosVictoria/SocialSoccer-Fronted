@@ -2,7 +2,7 @@
 <header class="Header-container">
   <div class="container">
     <div class="row Header-containerAlignV">
-      <div class="col-xs-6">
+      <div class="col-xs-5">
         <h1>Social Soccer</h1>
       </div>
       <div class="col-xs-12 col-md-12 col-lg-12 text-right">
@@ -12,8 +12,8 @@
         <md-button ng-show="!nav.authService.isAuthenticated()" ui-sref="users-create" class="hidden-xs">Registrarse</md-button>
         <md-button ng-if="!nav.authService.isAuthenticated()" ui-sref="login" class="">Iniciar Sesión</md-button>
 
-        <md-button name="button" type="button" ng-show="nav.authService.isAuthenticated()" ng-click="!nav.authService.logout()" ui-sref="main" class="">Cerrar Sesion</md-button>
-        <md-button ng-if="nav.authService.isAuthenticated()" class="">{{nav.authService.userlog()}}</md-button>
+        <md-button name="button" type="button" ng-show="nav.authService.isAuthenticated()" ng-click="!nav.authService.logout()" ui-sref="main" class="col-xs-12 col-md-3 hidden-xs hidden-md Usuario">Cerrar Sesion</md-button>
+        <md-button ng-if="nav.authService.isAuthenticated()" class="col-md-3 Usuario-2">{{nav.authService.userlog()}}</md-button>
 
       </div>
     </div>
@@ -40,11 +40,17 @@
             <md-nav-item md-nav-sref="nosotros" name="page2">
               Nosotros
             </md-nav-item>
+            <md-nav-item md-nav-sref="reservations" ng-if="nav.authService.isAuthenticated()" name="page2">
+              Reservar
+            </md-nav-item>
+            <md-nav-item class="col-xs-12 col-md-4 hidden-md hidden-lg" md-nav-sref="main" name="button" type="button" ng-show="nav.authService.isAuthenticated()" ng-click="!nav.authService.logout()" ui-sref="main">
+              Cerrar Sesion
+            </md-nav-item>
             <!--md-nav-item md-nav-sref="goto('page3')" name="page3">
               Servicios
             </md-nav-item-->
 
-            <md-nav-item md-nav-sref="users-list" ng-if="nav.authService.isAdmin()" name="page4">
+            <md-nav-item md-nav-sref="users-list"  ng-if="nav.authService.isAdmin()" name="page4">
               Mis usuarios
             </md-nav-item>
 

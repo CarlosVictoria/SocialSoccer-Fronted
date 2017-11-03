@@ -1,0 +1,29 @@
+<h3 class="text-center">Reservas</h3>
+
+<section class="container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Fecha de la reserva</th>
+        <th>Hora Inicial</th>
+        <th>Hora Final</th>
+        <th>Nombres Usuario</th>
+        <th>Apellidos Usuario</th>
+        <th>Cancha</th>
+        <th>Torneo</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in vm.reservations">
+        <td>{{item.date}}</td>
+        <td>{{item.initialHour}}</td>
+        <td>{{item.finalHour}}</td>
+        <td>{{item.idUsers.names}}</td>
+        <td>{{item.idUsers.lastNames}}</td>
+        <td>{{item.idSoccerFields.name}}</td>
+        <td>{{item.idTournaments.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

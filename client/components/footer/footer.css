@@ -8,6 +8,11 @@
     display: block;
     text-decoration: none;
 }
+.Contact-information-adress,
+.Contact-information-phone,
+.Contact-information-email{
+  font-size: 16px;
+}
 
 .Contact {
     background: white;
@@ -24,7 +29,7 @@
     padding: .3em .5em;
 }
 
-.Contact >div>i{
+.Contact >div>a{
   font-size: 1.6em;
   color: black;
 }
@@ -50,7 +55,7 @@
 .Contact-information {
     color: white;
     display: block;
-    padding: 1em;
+    padding: 3em;
     text-align: center;
     background: rgba(17, 24, 31, 0.9)
 }

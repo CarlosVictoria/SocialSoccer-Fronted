@@ -11,7 +11,7 @@ angular.module('socialSoccerApp', [
         'ngMessages',
         'ngMaterial'
     ])
-    .constant('API', 'http://localhost:8080/SocialSoccer')
+    .constant('API', 'http://localhost:8080/SocialSoccer-Backend')
 
     .config(function(API, $authProvider){
        $authProvider.loginUrl = API + '/api/auth/login';

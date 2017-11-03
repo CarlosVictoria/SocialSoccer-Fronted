@@ -7,6 +7,8 @@
         <th>Email</th>
         <th>Tipo Documento</th>
         <th>N.documento</th>
+        <th>Departamento</th>
+        <th>Ciudad</th>
         <th>Acción</th>
       </tr>
     </thead>
@@ -17,6 +19,8 @@
         <td>{{item.email}}</td>
         <td>{{item.idDocumentTypes.description}}</td>
         <td>{{item.numDocument}}</td>
+        <td>{{item.idCities.idDepartment.name}}</td>
+        <td>{{item.idCities.name}}</td>
         <td><a class="btn btn-primary" ui-sref="users-update({idUsers:item.idUsers})">Editar</a></td>
       </tr>
     </tbody>
