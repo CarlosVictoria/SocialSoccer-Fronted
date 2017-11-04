@@ -3,20 +3,20 @@
 (function(){
 
 class ReservationsComponent {
-  constructor(establishmentsService, soccerFieldsService, $state, departmentsService, citiesService, reservationsService) {
-    this.establishmentsService = establishmentsService;
+  constructor(soccerFieldsService, $state, reservationsService, usersService) {
     this.soccerFieldsService = soccerFieldsService;
     this.$state = $state;
     this.departmentsService = departmentsService;
     this.citiesService = citiesService;
     this.reservationsService = reservationsService;
+    this.usersService = usersService;
   }
 
   $onInit(){
-    this.establishmentsService.query().$promise
+    this.usersService.query().$promise
     .then(response => {
-      console.log('establishments OK',response);
-      this.establishments = response;
+      console.log('users OK',response);
+      this.users = response;
     })
     .catch(err => {
       console.log('ERROR',err);
@@ -31,14 +31,6 @@ class ReservationsComponent {
       console.log('ERROR',err);
     });
 
-    this.departmentsService.query().$promise
-    .then(response => {
-      console.log('DEPARTMENS OK',response);
-      this.department = response;
-    })
-    .catch(err => {
-      console.log('ERROR',err);
-    });
   }
 
   createReservations(){
@@ -52,15 +44,6 @@ class ReservationsComponent {
     });
   }
 
-  getCities(){
-    console.log(this.idDepartment);
-    this.citiesService.getCities({idDepartment:this.idDepartment}).$promise
-    .then(response => {
-      console.log('GET CITIES', response);
-      this.cities = response;
-    })
-    .catch(err => console.error(err));
-  }
 }
 
 angular.module('socialSoccerApp')
