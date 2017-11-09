@@ -53,6 +53,9 @@
             <md-nav-item md-nav-sref="users-list"  ng-if="nav.authService.isAdmin()" name="page4">
               Mis usuarios
             </md-nav-item>
+            <md-nav-item md-nav-sref="reservations-list"  ng-if="nav.authService.isOwner()" name="page4">
+              Mis reservas
+            </md-nav-item>
 
             <md-button ng-show="!nav.authService.isAuthenticated()" ui-sref="users-create" class="visible-xs hidden-lg"name="page5">Registrarse</md-button>
 
