@@ -19,17 +19,6 @@ class ProfileComponent {
       console.log('Error Al Mostrar Perfil', err);
     })
 
-
-    /*this.usersService.query().$promise
-    .then(response=> {
-      this.user = response;
-      console.log('Perfil OK',response);
-        this.$state.go("profile");
-    })
-    .catch(err => {
-      console.log('Error Al Mostrar Perfil', err);
-    })*/
-
   }
 }
 
