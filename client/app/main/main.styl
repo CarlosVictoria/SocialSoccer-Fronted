@@ -1,12 +1,19 @@
-.carousel-caption
-  >p
-    font-size: 30px
-    text-transform: uppercase;
+.carousel-caption 
+    position: absolute
+    right: 15%
+    bottom: 35px
+    width: 60%
+    left: 15%
+    z-index: 10
+    padding-top: 20px
+    padding-bottom: 20px
+    color: #fff
+    text-align: left
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .6)
 
 .Carousel-padding
   padding-left: 0
   padding-right: 0
-
 .row
   margin-left 0
   margin-right 0
@@ -37,7 +44,7 @@
     >p:nth-child(1)
       font-size: 26px
     >p:nth-child(2)
-      font-size: 66px
+      font-size: 56px
       color: MainColor
     >p:nth-child(3)
       font-size: 34px
@@ -45,38 +52,10 @@
   width 100%
   height 500px
   padding: 0px 0px 0.5em
-
-.Informacion
-  &-item
-    margin 30px 0
-    >i
-      font-size 150px
-      color green
-    >p
-      text-transform uppercase
-      font-size 35px
-    >h3
-      font-weight bold
-      font-size 50px
 .Btn-adsi
   margin-bottom 1em
-.Canchas
-  display inline-block
-  text-align center
-  background rgba(0, 0, 0, 0.51)
-  color white
-  margin-top 1em
-  border-radius 10px
-  border solid 2px rgba(25, 78, 218, 0.26)
-.imagen
-  width 250px
-  margin-top 1em
-  border-radius 20px
-  border solid 2px #f1efef
-
 .Slide-padding
   margin 0
-
 .pintura
   background-position: center
   background-size: cover
@@ -84,3 +63,15 @@
   background-image: url("../../assets/images/main/18.jpg")
   width: 100%
   padding-bottom 1em
+  background-attachment fixed
+
+.TRABAJANDO
+  font-size 100px
+  text-align center
+  color white
+  
+@media screen and (min-width:768px){
+    .carousel-caption h3{font-size: 52px} 
+    .carousel-caption p{font-size: 32px} 
+    .carousel-caption{padding-bottom:160px}
+}

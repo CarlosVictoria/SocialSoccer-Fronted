@@ -17,7 +17,7 @@
               		<div class="form-group">
               			<input type="date" class="form-control" ng-model="vm.reservations.date" required>
               		</div>
-              <div ng-messages="registerForm.typeDocument.$error">
+              <div ng-messages="registerForm.date.$error">
                 <div ng-message="required">La fecha es requerida</div>
               </div>
             </md-input-container>
@@ -26,7 +26,7 @@
                   <div class="form-group">
                     <input type="time" class="form-control" ng-model="vm.reservations.initialHour" required>
                   </div>
-              <div ng-messages="registerForm.typeDocument.$error">
+              <div ng-messages="registerForm.initialHour.$error">
                 <div ng-message="required">La hora es requerida</div>
               </div>
             </md-input-container>
@@ -42,25 +42,17 @@
               		<div class="form-group">
               			<input type="time" class="form-control" ng-model="vm.reservations.finalHour" required>
               		</div>
-              <div ng-messages="registerForm.typeDocument.$error">
+              <div ng-messages="registerForm.finalHour.$error">
                 <div ng-message="required">La hora es requerida</div>
               </div>
             </md-input-container>
-            <md-input-container flex="45">
-              <label for="">Usuario</label>
-                  <div class="form-group">
-                    <input type="text" class="form-control" ng-model="vm.reservations.idUsers.idUsers" required>
-                  </div>
-              <div ng-messages="registerForm.typeDocument.$error">
-                <div ng-message="required">El usuario es requerido</div>
-              </div>
-            </md-input-container>
+
             <div flex="10">
 
             </div>
           </div>
 
-          <div layout="row">
+          <!--div layout="row">
             <md-input-container flex="45">
               <label for="">Cancha</label>
                   <div class="form-group">
@@ -73,35 +65,35 @@
             <div flex="10">
 
             </div>
-          </div>
+          </div-->
 
 
-          <!--div layout="row" layout-align="space-between center">
-            <md-input-container flex="45">
+          <div layout="row" layout-align="space-between center">
+            <!--md-input-container flex="45">
 
               <label>Establecimiento</label>
-              <md-select name="establishments" ng-model="vm.idEstablishments" ng-change="" required>
+              <md-select name="establishments" ng-model="vm.reservations.idEstablishments.idEstablishments" ng-change="vm.getSoccerFiels()" required>
                 <md-option ng-value="{{item.idEstablishments}}" ng-repeat="item in vm.establishments">
                   {{item.name}}
                 </md-option>
               </md-select>
-              <div ng-messages="registerForm.department.$error">
+              <div ng-messages="registerForm.establishments.$error">
                 <div ng-message="required">Por favor ingrese un establecimiento.</div>
               </div>
-            </md-input-container>
+            </md-input-container-->
 
             <md-input-container flex="45">
               <label>Cancha</label>
-              <md-select name="cancha" ng-model="vm.soccerFields.idSoccerFields" required>
+              <md-select name="soccer_fields" ng-model="vm.reservations.idSoccerFields.idSoccerFields" required>
                 <md-option ng-value="{{item.idSoccerFields}}" ng-repeat="item in vm.soccerFields">
                   {{item.name}}
                 </md-option>
               </md-select>
-              <div ng-messages="registerForm.city.$error">
+              <div ng-messages="registerForm.soccerFields.$error">
                 <div ng-message="required">Por favor ingrese una cancha.</div>
               </div>
             </md-input-container>
-          </div-->
+          </div>
 
           <div class="text-center">
             <md-button  class="Register-button md-raised md-primary" type="submit">Reservar</md-button>

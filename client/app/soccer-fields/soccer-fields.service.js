@@ -6,8 +6,13 @@ function soccerFieldsService(API, $resource) {
   },{
     update:{
       method: 'PUT'
-    }
-  })
+    },
+		getSoccerFiels:{
+			url: API + '/api/soccer_fields/:idHeadquarters/:idEstablishments/:idEstablishments',
+			method: 'GET',
+			isArray : true
+		}
+  });
 }
 
 angular.module('socialSoccerApp')

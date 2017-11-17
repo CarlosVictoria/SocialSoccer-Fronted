@@ -7,8 +7,10 @@ function authService($auth,$state) {
  		logout:logout,
     userlog: userlog,
  		isAdmin:isAdmin,
+    isOwner:isOwner,
 		isUser:isUser,
-		isAuthenticated:isAuthenticated
+		isAuthenticated:isAuthenticated,
+    getIdUser:getIdUser
   };
 
   function login(user,collback){
@@ -22,6 +24,14 @@ function authService($auth,$state) {
  			$state.go('login');
  		});
  	}
+
+  function getIdUser(){
+    if(Auth.isAuthenticated()){
+      return $auth.getPayload().sub;
+    }else{
+      return null;
+    }
+  }
 
   function logout(){
     if ($auth.isAuthenticated()) {
@@ -39,6 +49,18 @@ function authService($auth,$state) {
   function isAdmin(){
     if ($auth.isAuthenticated()) {
       if ($auth.getPayload().roles.indexOf("ADMIN") !== -1) {
+        return true;
+      }else {
+        return false;
+      }
+    }else {
+      return false;
+    }
+  }
+
+  function isOwner(){
+    if ($auth.isAuthenticated()) {
+      if ($auth.getPayload().roles.indexOf("OWNER") !== -1) {
         return true;
       }else {
         return false;

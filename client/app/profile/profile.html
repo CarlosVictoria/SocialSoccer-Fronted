@@ -1,1 +1,11 @@
-<div>This is the profile view.</div>
+
+<div class="card">
+  <img src="assets/images/information/1.jpg" alt="John" class="img-profile" style="width:100%">
+
+    <div>Nombre: {{vm.user.names}}</div>
+    <div>Apellido: {{vm.user.lastNames}}</div>
+    <div>email: {{vm.user.email}}</div>
+    <div>{{vm.user.idDocumentTypes.description}} : {{vm.user.numDocument}}</div>
+    <div>{{vm.user.idCities.idDepartment.name}}</div>
+    <div>{{vm.user.idCities.name}}</div>
+    <div><a class="btn btn-primary Editar" ui-sref="users-update({idUsers:vm.user.idUsers})">Editar Perfil </a></td>
