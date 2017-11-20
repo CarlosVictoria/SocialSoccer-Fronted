@@ -16,8 +16,8 @@
 .Informacion-item
   background: rgba(0, 0, 0, 0.4);
   border-radius 20px
-  padding 0
-
+  margin-top: 1em;
+  margin-bottom: 1em;
 
 .Tittle
   color Lightblue
@@ -40,11 +40,9 @@
 .Cancha-image
   display: inline-block;
   width: 250px;
-  margin: 40px;
   border-radius: 8px;
 
 .Cancha-Main
-
   background-image: url("../../assets/images/main/3.jpg");
 
   background-repeat: no-repeat;
@@ -74,3 +72,137 @@
   .Informacion-item
     margin-left 0
     margin-right 0
+
+
+
+
+
+
+
+
+
+*, *:before, *:after {
+      box-sizing: border-box;
+    }
+
+    .content {
+      width:  100%
+      animation: animatop 0.9s cubic-bezier(0.425, 1.14, 0.47, 1.125) forwards;
+      display: flex;
+
+
+    }
+.punto
+  background-color primary
+  margin-bottom 0
+  border 0px solid #282e34 !important
+.Nosotros
+      background-color white
+      margin-bottom 0px
+      border-bottom-width 0px
+      margin 0
+      padding 0
+
+.Oculto
+  background-color white
+  margin-bottom 2px !important
+
+
+.card1 {
+      padding: 20px;
+      border-radius: 3px;
+      background-color: white;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+      position: relative;
+      overflow: hidden;
+      margin: 10px 7px;    }
+.card1:after {
+      content: '';
+      display: block;
+      width: 190px;
+      height: 300px;
+      background: cadetblue;
+      position: absolute;
+      animation: rotatemagic 0.75s cubic-bezier(0.425, 1.04, 0.47, 1.105) 1s both;
+    }
+
+.badgescard {
+      padding: 10px 20px;
+      border-radius: 3px;
+      background-color: #ECECEC;
+      width: 480px;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+      position: absolute;
+      z-index: -1;
+      left: 10px;
+      bottom: 10px;
+      animation: animainfos 0.5s cubic-bezier(0.425, 1.04, 0.47, 1.105) 0.75s forwards;
+    }
+.badgescard span {
+      font-size: 1.6em;
+      margin: 0px 6px;
+      opacity: 0.6;
+    }
+.firstinfo {
+      flex-direction: row;
+      z-index: 2;
+      position: relative;
+    }
+.firstinfo img {
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+    }
+.firstinfo .profileinfo {
+      padding: 0px 20px;
+    }
+.firstinfo .profileinfo h1 {
+      font-size: 1.8em;
+    }
+.firstinfo .profileinfo h3 {
+      font-size: 1.2em;
+      color: #009688;
+      font-style: italic;
+    }
+.firstinfo .profileinfo p.bio {
+      padding: 10px 0px;
+      color: #5A5A5A;
+      line-height: 1.2;
+      font-style: initial;
+    }
+
+@keyframes animatop {
+  0% {
+        opacity: 0;
+        bottom: -500px;
+      }
+  100% {
+        opacity: 1;
+        bottom: 0px;
+      }
+    }
+@keyframes animainfos {
+    0% {
+        bottom: 10px;
+      }
+  100% {
+        bottom: -42px;
+      }
+    }
+@keyframes rotatemagic {
+  0% {
+        opacity: 0;
+        transform: rotate(0deg);
+        top: -24px;
+        left: -253px;
+      }
+  100% {
+        transform: rotate(-30deg);
+        top: -24px;
+        left: -78px;
+      }
+    }
+
+    /*@media (min-width: 1200px)
+    .col-lg-12 {
+        width: 116%;*/

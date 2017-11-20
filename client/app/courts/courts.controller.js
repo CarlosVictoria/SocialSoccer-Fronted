@@ -11,7 +11,8 @@
     angular.module('socialSoccerApp')
         .component('courts', {
             templateUrl: 'app/courts/courts.html',
-            controller: CourtsController
+            controller: CourtsController,
+            controllerAs: 'vm'
         });
 
 })();

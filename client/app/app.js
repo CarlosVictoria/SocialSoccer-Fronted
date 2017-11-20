@@ -9,7 +9,9 @@ angular.module('socialSoccerApp', [
         'ui.bootstrap',
         'satellizer',
         'ngMessages',
-        'ngMaterial'
+        'ngMaterial',
+        'ngFileSaver',
+        'ngFileUpload'
     ])
     .constant('API', 'http://localhost:8080/SocialSoccer-Backend')
 

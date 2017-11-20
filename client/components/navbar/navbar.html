@@ -8,14 +8,14 @@
 
       <div class="col-xs-10 col-md-10 col-lg-10 ">
         <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navMenu" >
-          <md-button ng-if="!nav.authService.isAuthenticated()" ui-sref="login" class="button">Iniciar Sesión</md-button>
+          <md-button ng-if="!nav.authService.isAuthenticated()" ui-sref="login" class="button btn btn-primary">Iniciar Sesión</md-button>
           <i class="fa fa-bars" aria-hidden="true"></i>
         </button>
-        <md-button ng-show="!nav.authService.isAuthenticated()" ui-sref="users-create" class="hidden-xs col-sm-pull-2 ">Registrarse</md-button>
-        <md-button ng-show="!nav.authService.isAuthenticated()" ui-sref="login" class="hidden-xs ">Iniciar Sesión</md-button>
+        <md-button ng-show="!nav.authService.isAuthenticated()" ui-sref="users-create" class="btn btn-warning hidden-xs col-sm-pull-2 ">Registrarse</md-button>
+        <md-button ng-show="!nav.authService.isAuthenticated()" ui-sref="login" class="btn btn-primary hidden-xs ">Iniciar Sesión</md-button>
 
-        <md-button ui-sref="profile" ng-show="nav.authService.isAuthenticated()" class=" col-xs-5 col-sm-4 col-md-4 col-lg-4 col-md-push-3  Usuario-2">{{nav.authService.userlog()}}</md-button>
-       <md-button name="button" type="button" ng-show="nav.authService.isAuthenticated()" ng-click="!nav.authService.logout()" ui-sref="main" class=" hidden-xs hidden-sm  col-sm-pull-3 col-md-push-3  Usuario">Cerrar Sesion</md-button>
+        <md-button ui-sref="profile" ng-show="nav.authService.isAuthenticated()" class="btn btn-success col-xs-5 col-sm-4 col-md-4 col-lg-4 col-md-push-3  Usuario-2">{{nav.authService.userlog()}}</md-button>
+       <md-button name="button" type="button" ng-show="nav.authService.isAuthenticated()" ng-click="!nav.authService.logout()" ui-sref="main" class="btn btn-danger hidden-xs hidden-sm  col-sm-pull-3 col-md-push-3  Usuario">Cerrar Sesion</md-button>
       </div>
     </div>
   </div>
@@ -57,7 +57,7 @@
           </ul>
         </div>
       </div>
-        <div class=" col-xs-10 col-md-10 hidden-xs MarginTopSearch-main Search">
+        <!-- <div class=" col-xs-10 col-md-10 hidden-xs MarginTopSearch-main Search">
           <form>
             <div class="input-group">
              <input type="text" class="form-control" placeholder="¿Encontro lo que buscaba?"></input>
@@ -85,4 +85,4 @@
         </span>
       </div>
     </form>
-  </div>
+  </div> -->

@@ -1,5 +1,5 @@
 
-<div class="card">
+<!-- <div class="card">
   <img src="assets/images/information/1.jpg" alt="John" class="img-profile" style="width:100%">
 
     <div>Nombre: {{vm.user.names}}</div>
@@ -8,4 +8,63 @@
     <div>{{vm.user.idDocumentTypes.description}} : {{vm.user.numDocument}}</div>
     <div>{{vm.user.idCities.idDepartment.name}}</div>
     <div>{{vm.user.idCities.name}}</div>
-    <div><a class="btn btn-primary Editar" ui-sref="users-update({idUsers:vm.user.idUsers})">Editar Perfil </a></td>
+    <div><a class="btn btn-primary Editar" ui-sref="users-update({idUsers:vm.user.idUsers})">Editar Perfil </a></td> -->
+      <div class="container">
+        <div class="profile-box row ">
+          <div class="col-xs-12 col-md-12">
+          <div class="profile-cover-image img-responsive ">
+            <img src="assets/images/information/12.jpg " class="img-resposive" />
+          </div>
+          <div class="profile-picture img-responsive  ">
+            <img src="assets/images/Photos/{{vm.user.photoUser}}"/>
+            <div class="panel-body2">
+              <div layout="column" ng-cloak class="md-inline-form">
+                <form name="" ng-submit="vm.create(form)">
+                  <button type="file" class="btn btn-primary select " ngf-select ng-model="vm.file" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" ngf-resize="{width: 100, height: 100}">Seleccione Archivo</button>
+                  <div class="">
+                    <button class="btn btn-warning Subir  " type="submit">Subir Imágen</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+            <div class="profile-content col-xs-12">
+          <table class="table table-hover">
+            <tbody>
+              <tr>
+                <td>Nombre:</td>
+                <td>{{vm.user.names}}</td>
+              </tr>
+              <tr>
+                <td>Apellido:</td>
+                <td>{{vm.user.lastNames}}</td>
+              </tr>
+              <tr>
+                <td>Email:</td>
+                <td>{{vm.user.email}}</td>
+              </tr>
+              <tr>
+                <td>{{vm.user.idDocumentTypes.description}}</td>
+                <td>{{vm.user.numDocument}}</td>
+              </tr>
+              <tr>
+                <td>Departamento:  </td>
+                <td>{{vm.user.idCities.idDepartment.name}}</td>
+              </tr>
+              <tr>
+                <td>Ciudad: </td>
+                <td>{{vm.user.idCities.name}}</td>
+              </tr>
+            </tbody>
+          </table>
+
+              <div>
+                <a class="btn btn-primary Editar " ui-sref="users-update({idUsers:vm.user.idUsers})">Editar Perfil </a>
+              </div>
+            <div class="socials">
+              <a href="#"><i class="fa fa-dribbble"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
