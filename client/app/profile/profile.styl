@@ -7,15 +7,17 @@
 .letra
   font-size: 14px
   text-align left
-a {
+a
+  transition all ease 0.3s
 
-    transition: all ease 0.3s;
-  }
 .select
-  margin-left 117px
+  margin-left 197px
   font-size 17px !important
   margin-bottom 0.8em
   margin-top .5em
+.sox
+  padding-top 28px
+
 .Subir
   font-size 17px !important
   margin-left 220px
@@ -37,9 +39,10 @@ a {
     border: 5px solid #fff;
     border-radius: 100%;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
-    width: 120px;
-    height: 120px;
+    width 151px !important
+    height 151px !important
     margin-left: 225px;
+    margin-top: -78px !important
   }
 
 .profile-cover-image {
@@ -52,28 +55,12 @@ a {
   }
 
 .profile-content {
-    padding: 40px 20px;
+    padding: 40px 0px;
     text-align: center;
+    font-size: 13px
   }
-.profile-content h1 {
-    font-weight: normal;
-    margin-bottom: 0.2em;
-  }
-.profile-content p {
-    font-size: 1.1em;
-    line-height: 1.6;
-    color: #d2d2d2;
-  }
-.profile-content .socials a {
-    color: #d2d2d2;
-    margin: 0 15px;
-    font-size: 1.6em;
-    transform: translateY(4px);
-  }
-.profile-content .socials a:hover {
-    color: #aaa;
-    transform: translateY(0);
-  }
+
+
 @media(max-width 320px)
   .profile-picture img
     margin-left 121px
@@ -83,3 +70,35 @@ a {
 
   .Subir
     margin-left 108px
+@media(max-width 390px)
+  .profile-picture img
+    margin-left 14px
+
+  .select
+    margin-left 111px
+
+  .Subir
+    margin-left 132px
+
+
+@media(max-width 445px)
+  .select
+    margin-left 88px
+  .Subir
+    margin-left 108px
+@media(max-width 450px)
+  .select
+    margin-left 88px
+  .Subir
+   margin-left 108px
+
+  .profile-picture img
+    margin-left 117px !important
+
+@media(max-width 540px)
+  .profile-picture img
+    margin-left 150px
+
+@media(max-width 320)
+  .profile-content
+    font-size
