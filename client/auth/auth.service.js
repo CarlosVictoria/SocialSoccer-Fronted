@@ -12,6 +12,7 @@ function authService($auth,$state) {
 		isUser:isUser,
 		isAuthenticated:isAuthenticated,
     getIdUser:getIdUser
+    
   };
 
   function login(user,collback){
@@ -95,7 +96,9 @@ function authService($auth,$state) {
     }
   }
 
+
   return Auth;
+
 }
 
 authService.$inject  = ['$auth','$state'];

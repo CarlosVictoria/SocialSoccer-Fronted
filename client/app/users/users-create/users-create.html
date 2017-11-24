@@ -12,7 +12,7 @@
           <br>
 
           <div layout="row">
-            <md-input-container flex="45">
+            <md-input-container flex="45" class="col-xs-12">
               <label class="Register-label">Tipo Documento</label>
               <!--<md-icon md-font-icon="fa fa-id-badge"></md-icon>-->
               <md-select name="typeDocument" ng-model="vm.user.idDocumentTypes.idDocumentTypes" required>
@@ -29,7 +29,7 @@
               <!-- Spacer //-->
             </div>
 
-            <md-input-container flex="45">
+            <md-input-container flex="45" class="col-xs-12">
               <!--<md-icon md-font-icon="fa fa-id-card-o"></md-icon>-->
               <label>Número de documento</label>
               <input name="document" ng-model="vm.user.numDocument" required
@@ -43,7 +43,7 @@
           </div>
 
           <div layout="row" layout-align="space-between center">
-            <md-input-container flex="45">
+            <md-input-container flex="45" class="col-xs-12">
               <!--<md-icon md-font-icon="fa fa-user-o"></md-icon>-->
               <label>Nombres</label>
               <input ng-model="vm.user.names" name="name" ng-pattern="/^[a-zA-Z\s]*$/"
@@ -56,7 +56,7 @@
               </div>
             </md-input-container>
 
-            <md-input-container flex="45">
+            <md-input-container flex="45" class="col-xs-12">
               <!--<md-icon md-font-icon="fa fa-user-o"></md-icon>-->
               <label>Apellidos</label>
               <input ng-model="vm.user.lastNames" ng-pattern="/^[a-zA-Z\s]*$/"
@@ -71,7 +71,7 @@
           </div>
 
           <div layout="row">
-            <md-input-container flex="45">
+            <md-input-container flex="45" class="col-xs-12">
               <!--<md-icon md-font-icon="fa fa-unlock-alt"></md-icon>-->
               <label>Contraseña</label>
               <input type="password" ng-model="vm.user.password" minlength="4"
@@ -87,7 +87,7 @@
               <!-- Spacer //-->
             </div>
 
-            <md-input-container flex="45">
+            <md-input-container flex="45" class="col-xs-12">
               <!--<md-icon md-font-icon="fa fa-venus-mars"></md-icon>-->
               <label>Género</label>
               <md-select name="gender" ng-model="vm.user.gender" required>
@@ -101,7 +101,7 @@
             </md-input-container>
           </div>
 
-            <md-input-container class="md-block">
+            <md-input-container class="md-block" class="col-xs-12">
               <!--<md-icon md-font-icon="fa fa-envelope"></md-icon>-->
               <label>Correo</label>
               <input ng-model="vm.user.email" name="email" required minlength="10"
@@ -115,7 +115,7 @@
             </md-input-container>
 
           <div layout="row" layout-align="space-between center">
-            <md-input-container flex="45">
+            <md-input-container flex="45" class="col-xs-12">
               <!--<md-icon md-svg-src="../../../assets/images/information/colombia.svg"></md-icon>-->
               <label>Departamento</label>
               <md-select name="department" ng-model="vm.idDepartment" ng-change="vm.getCities()" required>
@@ -128,7 +128,7 @@
               </div>
             </md-input-container>
 
-            <md-input-container flex="45">
+            <md-input-container flex="45" class="col-xs-12">
               <!--<md-icon md-font-icon="fa fa-map-marker"></md-icon>-->
               <label>Ciudad</label>
               <md-select name="city" ng-model="vm.user.idCities.idCities" required>
