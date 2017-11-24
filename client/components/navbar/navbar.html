@@ -41,7 +41,7 @@
                 Nosotros</a>
             </li>
             <li >
-              <a ui-sref="users-list"  ng-hide="!nav.authService.isAuthenticated()" name="page4" ui-sref-active="active" class="navbar-link text-center" ng-click="nav.ocultarCollapse()">
+              <a ui-sref="users-list"  ng-hide="!nav.authService.isAdmin()" name="page4" ui-sref-active="active" class="navbar-link text-center" ng-click="nav.ocultarCollapse()">
                 Mis Usuarios</a>
             </li>
             <li>
@@ -59,7 +59,7 @@
               Mis reservas</a>
             </li>
             <li>
-            <a ui-sref="reservations"  ng-if="nav.authService.isAuthenticated()" name="page5">
+            <a ui-sref="reservations"  ng-if="nav.authService.isAuthenticated()"class="text-center" name="page4">
               Reservar</a>
             </li>
           </ul>
