@@ -13,10 +13,12 @@
         </button>
         <md-button ng-if="!nav.authService.isAuthenticated()" ui-sref="users-create" class="btn btn-warning hidden-xs col-sm-pull-2 ">Registrarse</md-button>
         <md-button ng-if="!nav.authService.isAuthenticated()" ui-sref="login" class="btn btn-primary hidden-xs ">Iniciar Sesión</md-button>
-
-        <md-button ui-sref="profile" ng-if="nav.authService.isAuthenticated()" class="btn btn-success col-xs-5 col-sm-4 col-md-4 col-lg-4 col-md-push-3  Usuario-2">{{nav.authService.userlog()}}</md-button>
+        <md-button ui-sref="profile" ng-if="nav.authService.isAuthenticated()" class=" btn btn-success col-xs-5 col-sm-4 col-md-4 col-lg-4 col-md-push-3  Usuario-2">
+            {{nav.authService.username() }} </md-button>
        <md-button name="button" type="button" ng-if="nav.authService.isAuthenticated()" ng-click="!nav.authService.logout()" ui-sref="main" class="btn btn-danger hidden-xs hidden-sm  col-sm-pull-3 col-md-push-3  Usuario">Cerrar Sesion</md-button>
-      </div>
+
+  <img src="" alt=""  ng-src="../../assets/images/Photos/{{nav.$auth.getPayload().avatar}}"/>
+</div>
     </div>
   </div>
 </header>
@@ -46,7 +48,7 @@
                 Cerrar sesion</a>
             </li>
             <li >
-              <a ui-sref="users-create"   ng-hide="!nav.authService.isAuthenticated()" name="page5"class="navbar-link text-center " ng-click="nav.ocultarCollapse()">
+              <a ui-sref="users-create"   ng-if="!nav.authService.isAdmin()" name="page5"class="navbar-link text-center visible-xs" ng-click="nav.ocultarCollapse()">
                 Registrarse</a>
             </li>
 

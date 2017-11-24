@@ -3,10 +3,14 @@
 class NavbarController {
   //start-non-standard
 
-  constructor(authService){
+  constructor(authService, $auth){
     this.authService = authService;
+    this.$auth = $auth;
   }
-  
+  $onInit(){
+    console.log(this.$auth.getPayload());
+  }
+
   menu = [{
     'title': 'Home',
     'state': 'main'
