@@ -1,12 +1,45 @@
 'use strict';
 (function(){
+  class UsersListComponent {
+    constructor(usersService, NavegateParams, $state) {
+      this.usersService = usersService;
+      this.NavegateParams = NavegateParams;
+      this.$state = $state;
 
-class UsersListComponent {
-  constructor(usersService) {
-    this.usuarios = usersService.query();
-    console.log(this.usuarios);
+      this.query = {
+        limit:4,
+        page:1
+      };
+    }
+
+    $onInit(){
+    	this.usersService.query().$promise
+    	.then(response => {
+    		console.log("USUARIOS OK",response);
+        this.users = response;
+    	})
+    	.catch(err => {
+    		console.log("ERROR",err);
+    	});
+
+
+    }
+    goUpdateUser(idUser){
+      this.NavegateParams.setData('idUserLog', idUser);
+      this.$state.go("users-update");
+    }
+
+
+    cambiarEstado(item){
+      this.usersService.update(item).$promise
+      .then(response => {
+        alert("Se ha efectuado el cambio de estado");
+      })
+      .catch(err => {
+        alert("Hubo problemas al afectuar el cambio de estado");
+      })
+    }
   }
-}
 UsersListComponent.$inject = ['usersService'];
 angular.module('socialSoccerApp')
   .component('usersList', {

@@ -1,28 +1,52 @@
-<section class="container">
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Nombres</th>
-        <th>Apellidos</th>
-        <th>Email</th>
-        <th>Tipo Documento</th>
-        <th>N.documento</th>
-        <th>Departamento</th>
-        <th>Ciudad</th>
-        <th>Acción</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="item in vm.usuarios">
-        <td>{{item.names}}</td>
-        <td>{{item.lastNames}}</td>
-        <td>{{item.email}}</td>
-        <td>{{item.idDocumentTypes.description}}</td>
-        <td>{{item.numDocument}}</td>
-        <td>{{item.idCities.idDepartment.name}}</td>
-        <td>{{item.idCities.name}}</td>
-        <td><a class="btn btn-primary" ui-sref="users-update({idUsers:item.idUsers})">Editar</a></td>
-      </tr>
-    </tbody>
-  </table>
+<!-- -- -->
+
+<section class="container list" ng-cloak="">
+<div class="panel panel-primary tabla">
+	<div class="panel-heading">
+		<h3 class="panel-title">Buscar</h3>
+		<input class="letter form-control" type="text" ng-model="vm.filtro">
+	</div>
+
+<div class="panel-body">
+	<md-table-container>
+		<table md-table>
+			<thead md-head>
+				<tr>
+					<th md-column>Nombres</th>
+					<th md-column>Apellidos</th>
+          <th md-column>Email</th>
+          <th md-column>Tipo Documento</th>
+          <th md-column>Num. Documento</th>
+          <th md-column>Departamento</th>
+          <th md-column>Ciudad</th>
+					<th md-column>Switch</th>
+					<th md-column>Actualizar</th>
+				</tr>
+			</thead>
+			<tbody md-body>
+				<tr md-row ng-repeat="item in vm.users | limitTo:vm.query.limit: (vm.query.page -1) * vm.query.limit | filter:vm.filtro">
+					<td md-cell>{{item.names}}</td>
+					<td md-cell>{{item.lastNames}}</td>
+          <td md-cell>{{item.email}}</td>
+          <td md-cell>{{item.idDocumentTypes.description}}</td>
+          <td md-cell>{{item.numDocument}}</td>
+          <td>{{item.idCities.idDepartment.name}}</td>
+          <td>{{item.idCities.name}}</td>
+					<td><md-switch ng-model="item.activo" aria-label="Switch 2" ng-change="vm.cambiarEstado(item)"> Activo: {{item.activo}} </md-switch></td>
+          <td><a class="btn btn-primary" ui-sref="users-update({idUsers:item.idUsers})">Editar</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</md-table-container>
+
+	<md-table-pagination md-limit="vm.query.limit"
+	                     md-limit-options="[5, 10, 15, 20]"
+											 md-page="vm.query.page"
+											 md-total="{{vm.users.length}}"
+											 md-on-paginate="getDeserts" md-page-select>
+	</md-table-pagination/>
+</div>
+</div>
+
+	<!--MD DATA TABLE-->
 </section>

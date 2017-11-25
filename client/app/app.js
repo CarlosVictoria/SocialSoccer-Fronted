@@ -11,7 +11,8 @@ angular.module('socialSoccerApp', [
         'ngMessages',
         'ngMaterial',
         'ngFileSaver',
-        'ngFileUpload'
+        'ngFileUpload',
+        'md.data.table'
     ])
     .constant('API', 'http://localhost:8080/SocialSoccer-Backend')
 
