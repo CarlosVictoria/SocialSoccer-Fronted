@@ -15,7 +15,7 @@
             <md-input-container flex="45">
               <label class="Registrer-label">Fecha</label>
               		<div class="form-group">
-              			<input type="date" class="form-control" ng-model="vm.reservations.date" required>
+              			<input type="date" name="date" class="form-control" ng-model="vm.reservations.date" required>
               		</div>
               <div ng-messages="registerForm.date.$error">
                 <div ng-message="required">La fecha es requerida</div>
@@ -24,7 +24,7 @@
             <md-input-container flex="45">
               <label class="Registrer-label">Hora Inicial</label>
                   <div class="form-group">
-                    <input type="time" class="form-control" ng-model="vm.reservations.initialHour" required>
+                    <input type="time" name="initialHour" class="form-control" ng-model="vm.reservations.initialHour" required>
                   </div>
               <div ng-messages="registerForm.initialHour.$error">
                 <div ng-message="required">La hora es requerida</div>
@@ -40,7 +40,7 @@
             <md-input-container flex="45">
               <label for="">Hora Final</label>
               		<div class="form-group">
-              			<input type="time" class="form-control" ng-model="vm.reservations.finalHour" required>
+              			<input type="time" name="finalHour" class="form-control" ng-model="vm.reservations.finalHour" required>
               		</div>
               <div ng-messages="registerForm.finalHour.$error">
                 <div ng-message="required">La hora es requerida</div>
@@ -84,8 +84,8 @@
 
             <md-input-container flex="45">
               <label>Cancha</label>
-              <md-select name="soccer_fields" ng-model="vm.reservations.idSoccerFields.idSoccerFields" required>
-                <md-option ng-value="{{item.idSoccerFields}}" ng-repeat="item in vm.soccerFields">
+              <md-select name="soccerFields" ng-model="vm.reservations.idSoccerFields.idSoccerFields" required>
+                <md-option  ng-value="{{item.idSoccerFields}}" ng-repeat="item in vm.soccerFields">
                   {{item.name}}
                 </md-option>
               </md-select>
