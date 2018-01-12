@@ -10,7 +10,7 @@
         </a>
         <md-button name="button" type="button" ng-if="nav.authService.isAuthenticated()" ng-click="!nav.authService.logout()" ui-sref="main" class="btn btn-danger hidden-xs hidden-sm    col-md-push-8 Usuario">Cerrar Sesion</md-button>
         <md-button ui-sref="profile" ng-if="nav.authService.isAuthenticated()" class=" btn btn-success col-xs-3 col-md-push-8    Usuario-2">
-          {{nav.authService.username()}} </m   d-button>
+          {{nav.authService.username()}} </md-button>
 
           <md-button ng-if="!nav.authService.isAuthenticated()" ui-sref="login" class="button btn btn-primary hidden-md hidden-sm hidden-lg">Iniciar Sesión</md-button>
         </div>
