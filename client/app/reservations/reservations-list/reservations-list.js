@@ -5,6 +5,7 @@ angular.module('socialSoccerApp')
     $stateProvider
       .state('reservations-list', {
         url: '/reservations-list',
+        authenticate : ['OWNER'],
         template: '<reservations-list></reservations-list>'
       });
   });

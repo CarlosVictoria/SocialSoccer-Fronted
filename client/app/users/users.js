@@ -5,6 +5,7 @@ angular.module('socialSoccerApp')
     $stateProvider
       .state('users-list', {
         url: '/users-list',
+        authenticate : ['ADMIN'],
         template: '<users-list></users-list>'
       })
       .state('users-create', {

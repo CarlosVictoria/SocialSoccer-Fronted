@@ -11,8 +11,9 @@ function authService($auth,$state) {
     isOwner:isOwner,
 		isUser:isUser,
 		isAuthenticated:isAuthenticated,
-    getIdUser:getIdUser
-    
+    getIdUser:getIdUser,
+    getRoles: getRoles
+
   };
 
   function login(user,collback){
@@ -26,6 +27,16 @@ function authService($auth,$state) {
  			$state.go('login');
  		});
  	}
+/*
+Toma todos los roles que tenga el usuario que inicio session
+*/
+  function getRoles(){
+    if (Auth.isAuthenticated()) {
+      return $auth.getPayload().roles
+    }else {
+      return false;
+    }
+  }
 
   function getIdUser(){
     if(Auth.isAuthenticated()){
