@@ -44,8 +44,8 @@
              <div class="col-md-8">
                <div class="profile-info-right">
                  <ul class="nav nav-pills nav-pills-custom-minimal custom-minimal-bottom admin-menu">
-                   <li class="active"><a href="datos" data-target-id="datos">DATOS</a></li>
-                   <li><a ui-sref="reservations-list" data-target-id="reservaciones">MIS RESERVACIONES</a></li>
+                   <li class="active"><a href="datos" ui-sref="users-update({idUsers:vm.user.idUsers})" data-target-id="datos">DATOS</a></li>
+                   <li><a ui-sref="reservations-list" class="active" data-target-id="reservaciones">MIS RESERVACIONES</a></li>
                  </ul>
 
                  <div class="profile-content col-xs-12 admin-content" id="datos">
