@@ -12,25 +12,27 @@
           <br>
 
           <div layout="row">
-            <md-input-container flex="45">
+            <md-content flex="45">
               <label class="Registrer-label">Fecha</label>
               		<div class="form-group">
-              			<input type="date" name="date" class="form-control" ng-model="vm.reservations.date" required>
+              			<md-datepicker type="date" name="registerForm" class="form-control" md-is-open="ctrl.isOpen" ng-model="vm.reservations.date" required> </md-datepicker>
               		</div>
               <div ng-messages="registerForm.date.$error">
                 <div ng-message="required">La fecha es requerida</div>
               </div>
-            </md-input-container>
+            </md-content>
+
             <md-input-container flex="45">
               <label class="Registrer-label">Hora Inicial</label>
                   <div class="form-group">
-                    <input type="time" name="initialHour" class="form-control" ng-model="vm.reservations.initialHour" required>
+                    <input type="time" name="initialHour" class="form-control  clockpicker" ng-model="vm.reservations.initialHour" required>
                   </div>
+
+
               <div ng-messages="registerForm.initialHour.$error">
                 <div ng-message="required">La hora es requerida</div>
               </div>
             </md-input-container>
-
             <div flex="10">
 
             </div>

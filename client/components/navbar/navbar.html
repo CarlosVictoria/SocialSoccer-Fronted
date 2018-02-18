@@ -1,16 +1,18 @@
 <!--Header-->
 <header class="Header-container">
-  <div class="container">
+  <!-- <div class="container"> -->
     <div class="row Header-containerAlignV">
       <div class="col-xs-3 col-md-6 ">
+        <img src="assets/images/header/logo.png" class="logo" />
         <a ui-sref="main">Social Soccer</a>
       </div>
-      <div class="col-xs-6 col-md-12  ">
+      <div class="col-xs-6 col-md-6  ">
         <a ui-sref="profile"class="hidden-sm"><img ng-if="nav.authService.isAuthenticated()" class="img-resposive img-circle hidden-xs"  ng-src="../../assets/images/Photos/{{nav.$auth.getPayload().avatar}}"/>
         </a>
-        <md-button name="button" type="button" ng-if="nav.authService.isAuthenticated()" ng-click="!nav.authService.logout()" ui-sref="main" class="btn btn-danger hidden-xs hidden-sm    col-md-push-8 Usuario">Cerrar Sesion</md-button>
-        <md-button ui-sref="profile" ng-if="nav.authService.isAuthenticated()" class=" btn btn-success col-xs-3 col-md-push-8    Usuario-2">
-          {{nav.authService.username()}}</md-button>
+        <md-button name="button" type="button" ng-if="nav.authService.isAuthenticated()" ng-click="!nav.authService.logout()" ui-sref="main" class=" btn btn-danger hidden-xs hidden-sm    col-md-push-8 Usuario"><i class="fa fa-sign-out"></i> Cerrar Sesion
+</md-button>
+        <md-button ui-sref="profile" ng-if="nav.authService.isAuthenticated()" class=" btn btn-success col-xs-12 col-md-3 col-md-push-8    Usuario-2"><i class="fa fa-user"></i>
+          {{nav.authService.username() }} </md-button>
 
           <md-button ng-if="!nav.authService.isAuthenticated()" ui-sref="login" class="button btn btn-primary hidden-md hidden-sm hidden-lg">Iniciar Sesión</md-button>
         </div>
@@ -45,8 +47,10 @@
                 Mis Usuarios</a>
             </li>
             <li>
-              <a class="navbar-link text-center  hidden-md    hidden-lg " ui-sref="main" name="button" type="button" ng-show="nav.authService.isAuthenticated()" ng-click="!nav.authService.logout()" ui-sref="main"
+              <a class="navbar-link text-center  hidden-md hidden-lg  " ui-sref="main" name="button" type="button" ng-show="nav.authService.isAuthenticated()" ng-click="!nav.authService.logout()" ui-sref="main"
                   ng-click="nav.ocultarCollapse()">
+
+
                 Cerrar sesion</a>
             </li>
             <li >
