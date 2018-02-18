@@ -46,7 +46,7 @@
             <md-input-container flex="45" class="col-xs-12">
               <!--<md-icon md-font-icon="fa fa-user-o"></md-icon>-->
               <label>Nombres</label>
-              <input ng-model="vm.user.names" name="name" ng-pattern="/^[a-zA-Z\s]*$/"
+              <input ng-model="vm.user.names" name="name" ng-pattern="/^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/"
               required minlength="3" maxlength="45">
               <div ng-messages="registerForm.name.$error">
                 <div ng-message="pattern">Su nombre no puede contener números.</div>
@@ -59,7 +59,7 @@
             <md-input-container flex="45" class="col-xs-12">
               <!--<md-icon md-font-icon="fa fa-user-o"></md-icon>-->
               <label>Apellidos</label>
-              <input ng-model="vm.user.lastNames" ng-pattern="/^[a-zA-Z\s]*$/"
+              <input ng-model="vm.user.lastNames" ng-pattern="/^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/"
               required minlength="3" maxlength="45" name="lastName">
               <div ng-messages="registerForm.lastName.$error">
                 <div ng-message="pattern">Su apellido no puede contener números.</div>

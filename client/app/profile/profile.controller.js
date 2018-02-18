@@ -17,10 +17,14 @@ class ProfileComponent {
     .then(response=>{
       this.user = response;
       console.log('Perfil OK',response);
+      console.log('usaurioasdfsd', this.user);
     })
     .catch(err => {
       console.log('Error Al Mostrar Perfil', err);
     })
+
+
+
 
   }
   create(from) {
