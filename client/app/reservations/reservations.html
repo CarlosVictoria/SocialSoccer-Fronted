@@ -25,7 +25,53 @@
             <md-input-container flex="45">
               <label class="Registrer-label">Hora Inicial</label>
                   <div class="form-group">
-                    <input type="time" name="initialHour" class="form-control  clockpicker" ng-model="vm.reservations.initialHour" required>
+                    <!--input type="time" name="initialHour" class="form-control  clockpicker" ng-model="vm.reservations.initialHour" required-->
+                    <div class="input-group hora">
+				              <input type="text" class="form-control" value="10:10">
+				              <span class="input-group-addon">
+					              <span class="glyphicon glyphicon-time"></span>
+				              </span>
+			              </div>
+                    <script type="text/javascript">
+
+
+$('.hora').clockpicker({
+   // Texto de confirmacion
+   donetext: 'Done',
+   // Call backs para los distintos eventos
+   init: function() {
+     console.log("colorpicker initiated");
+   },
+   beforeShow: function() {
+     console.log("before show");
+   },
+   afterShow: function() {
+     console.log("after show");
+   },
+   beforeHide: function() {
+     console.log("before hide");
+   },
+   afterHide: function() {
+     console.log("after hide");
+   },
+   beforeHourSelect: function() {
+     console.log("before hour selected");
+   },
+   afterHourSelect: function() {
+     console.log("after hour selected");
+   },
+   beforeDone: function() {
+     console.log("before done");
+   },
+   afterDone: function() {
+     console.log("after done");
+   }
+ })
+ .find('input').change(function(){
+   console.log('Viene del extenso', this.value);
+ });
+
+</script> 
                   </div>
 
 

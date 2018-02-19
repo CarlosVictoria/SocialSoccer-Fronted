@@ -3,7 +3,7 @@
 (function(){
 
 class ReservationsComponent {
-  constructor(soccerFieldsService,establishmentsService, $state, reservationsService, usersService, authService) {
+  constructor($http,soccerFieldsService,establishmentsService, $state, reservationsService, usersService, authService) {
     this.soccerFieldsService = soccerFieldsService;
     this.establishmentsService = establishmentsService;
     this.$state = $state;
@@ -12,9 +12,15 @@ class ReservationsComponent {
     this.reservationsService = reservationsService;
     this.usersService = usersService;
     this.authService = authService;
+    this.$http = $http;
+    this.awesome = [];
   }
 
   $onInit(){
+    this.$http.get('/api/things')
+      .then(response => {
+        this.awesomeThings = response.data;
+      });
     this.usersService.query().$promise
     .then(response => {
       console.log('users OK',response);
