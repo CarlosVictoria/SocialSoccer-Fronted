@@ -9,19 +9,31 @@ class LoginComponent {
   login(){
     console.log('DATOS DE LOGIN',this.user);
     this.authService.login(this.user);
-    if (!Notification) {
-     alert('Desktop notifications not available in your browser. Try Chromium.');
-     return;
-   }
-     var opciones = {
-       body: "Bienvenido"
-     }
-     var notificacion = new Notification('hola', opciones);
 
-     notification.show();
-     console.log("notificacion ok", notificacion);
+    var notification = null;
+      if (!('Notification' in window)) {
+          // el navegador no soporta la API de notificaciones
+          alert('Su navegador no soporta la API de Notificaciones :(');
+          return;
+      } else if (Notification.permission === "granted") {
+          // Se puede emplear las notificaciones
+            var opciones = {
+              icon: "assets/notifications/llave.png",
+              body: "Sesion iniciada correctamente"
+            }
+          notification = new Notification( "Hola, Bienvenido", opciones);
+
+      } else if (Notification.permission !== 'denied') {
+          // se pregunta al usuario para emplear las notificaciones
+          Notification
+                  .requestPermission(function(permission) {
+              if (permission === "granted") {
+                  notification = new Notification(
+                          "Hola Mundo");
+              }
+          });
+      }
   }
-
 }
 
 LoginComponent.$inject = ['authService'];
