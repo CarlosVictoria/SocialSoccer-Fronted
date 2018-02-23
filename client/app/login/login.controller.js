@@ -16,7 +16,7 @@ class LoginComponent {
      var opciones = {
        body: "Bienvenido"
      }
-     var notification = new Notification('hola', opciones);
+     var notificacion = new Notification('hola', opciones);
 
      notification.show();
      console.log("notificacion ok", notificacion);
