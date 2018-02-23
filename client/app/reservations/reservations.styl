@@ -3,14 +3,16 @@
   color #7a7a8c
 
 
-md-datepicker
-  padding 0 !important
+.md-datepicker-input
+  font-size: 19px;
 
 .layout-row > .flex-45
   background-color white !important
+  max-width 80%
 
 .reloj
   font-size 25px
+  color #276395
 .caja
   padding-right 40px
 
@@ -18,5 +20,31 @@ md-datepicker
   font-size 25px
   padding 20px
 
+.form-control
+  height 40px
+  padding 1px 1px
+  border 1px solid #276395
+
 .input-group .form-control
   padding-top  40px
+md-icon
+  color #276395 !important
+.md-calendar-day-header
+  background rgb(39, 99, 149)
+  color white
+
+.md-calendar-month-label
+  background #424a50
+  color white
+  font-size 18px
+.md-icon-button + .md-datepicker-input-container
+  margin-left 15px
+  width 73%
+  border-bottom-width 0px
+
+  .md-datepicker-expand-triangle
+   border-top-color: rgb(39, 99, 149);
+
+
+md-input-container label:not(.md-container-ignore)
+  padding-bottom: 15px;

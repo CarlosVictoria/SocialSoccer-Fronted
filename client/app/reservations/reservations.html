@@ -1,6 +1,7 @@
 <div class="Register">
   <div class="container">
     <div class="row">
+      
       <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
         <form class="Register-form" name="registerForm" ng-submit="vm.createReservations()">
 
@@ -14,8 +15,8 @@
           <div layout="row">
             <md-content flex="45">
               <label class="Registrer-label">Fecha</label>
-              		<div class="form-group">
-              			<md-datepicker type="date" name="registerForm" class="form-control" md-is-open="ctrl.isOpen" ng-model="vm.reservations.date" required> </md-datepicker>
+              		<div class="form-group ">
+              			<md-datepicker type="date" name="registerForm.date" class="form-control" md-placeholder="fecha"  md-is-open="ctrl.isOpen" ng-model="vm.reservations.date" required> </md-datepicker>
               		</div>
               <div ng-messages="registerForm.date.$error">
                 <div ng-message="required">La fecha es requerida</div>
@@ -30,9 +31,9 @@
             <div class="form-group">
               <div class="input-group hora">
                 <span class="input-group-addon caja">
-                  <span class="glyphicon glyphicon-time reloj"></span>
+                  <span class="glyphicon glyphicon-time reloj" ></span>
                 </span>
-                <input type="time" class="form-control control" name="initialHour" ng-model="vm.reservations.initialHour" required placeholder="10:10"   >
+                <input type="time" class="form-control control" name="initialHour" ng-model="vm.reservations.initialHour" required md-placeholder="10:10"   >
                 <script type="text/javascript">
 
                 $('.hora').clockpicker({
