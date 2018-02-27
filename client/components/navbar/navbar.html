@@ -14,7 +14,7 @@
         <md-button ui-sref="profile" ng-if="nav.authService.isAuthenticated()" class=" btn btn-success col-xs-12 col-md-4 col-md-push-8    Usuario-2"><i class="fa fa-user"></i>
           {{nav.authService.username() }} </md-button>
 
-          <md-button ng-if="!nav.authService.isAuthenticated()" ui-sref="login" class="button btn btn-primary hidden-md hidden-sm hidden-lg">Iniciar Sesión </md-button>
+          <md-button ng-if="!nav.authService.isAuthenticated()" ui-sref="login" class="button btn btn-primary hidden-md hidden-sm hidden-lg"><i class="fa fa-sign-out"></i> Iniciar Sesión </md-button>
         </div>
       <div class="col-xs-5 col-md-10 col-lg-10  ">
         <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navMenu" >
@@ -35,11 +35,11 @@
         <div class="col-xs-12 " nav-bar-ariaiu-label="navigation links">
           <ul class="nav navbar-nav">
             <li >
-              <a  ui-sref="main" name="page1" class="navbar-link text-center" ng-click="nav.ocultarCollapse()">
+              <a  ui-sref="main" name="page1" class="navbar-link text-center" ng-click="nav.ocultarCollapse()"><i class="fa fa-play"></i> |
                 Inicio</a>
             </li>
             <li >
-              <a ui-sref="nosotros" name="page2" class="navbar-link text-center"  ng-click="nav.ocultarCollapse()">
+              <a ui-sref="nosotros" name="page2" class="navbar-link text-center "  ng-click="nav.ocultarCollapse()"><i class="fa fa-users"></i>   |
                 Nosotros</a>
             </li>
             <li >
@@ -54,7 +54,7 @@
                 Cerrar sesion</a>
             </li>
             <li >
-              <a ui-sref="users-create"   ng-if="!nav.authService.isAdmin()" name="page5"class="navbar-link text-center visible-xs" ng-click="nav.ocultarCollapse()">
+              <a ui-sref="users-create"   ng-if="!nav.authService.isAdmin()" name="page5"class="navbar-link text-center visible-xs" ng-click="nav.ocultarCollapse()"><i class="fa fa-user-plus"></i>|
                 Registrarse</a>
             </li>
 

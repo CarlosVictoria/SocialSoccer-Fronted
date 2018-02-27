@@ -57,8 +57,7 @@ function authService($auth,$state) {
               // Se puede emplear las notificaciones
                 var opciones = {
                   icon: "assets/notifications/1.png",
-                  body: err.data,
-                    color: red
+                  body: err.data
                 }
               notification = new Notification( " ", opciones);
           } else if (Notification.permission !== 'denied') {

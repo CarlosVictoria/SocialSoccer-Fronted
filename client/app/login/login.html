@@ -6,9 +6,12 @@
           <h3 class="Login-title"> <i class="fa fa-sign-in"> </i> Iniciar sesión</h3><br>
 
           <!--Angular Material-->
+
           <md-input-container class="md-block">
+            <md-icon md-font-icon="fa fa-at fa-2x"></md-icon>
             <input type="text" placeholder="Email" md-no-asterisk ng-pattern="/^.+@.+\..+$/"
              md-maxlength="100" required name="name" ng-model="vm.user.email">
+
             <div ng-messages="loginForm.name.$error">
               <div ng-message="required">El email es requerido.</div>
               <div ng-message="pattern">Por favor ingrese un email válido.</div>
@@ -17,6 +20,8 @@
           </md-input-container>
 
           <md-input-container class="md-block">
+            <md-icon md-font-icon="fa fa-unlock-alt fa-2x"></md-icon>
+
             <input type="password" placeholder="Password" md-no-asterisk
             minlength="4" required name="password" ng-model="vm.user.password">
             <div ng-messages="loginForm.password.$error">
