@@ -12,10 +12,10 @@
           <br>
 
           <div layout="row">
-            <md-input-container flex="45" class="col-xs-12">
-              <label class="Register-label">Tipo Documento</label>
-              <!--<md-icon md-font-icon="fa fa-id-badge"></md-icon>-->
-              <md-select name="typeDocument" ng-model="vm.user.idDocumentTypes.idDocumentTypes" required>
+            <md-input-container flex class="col-xs-12 ">
+              <!-- <label class="Register-label">Tipo Documento</label> -->
+              <md-icon md-font-icon="fa fa-id-badge fa-2x" class="hidden-xs"></md-icon>
+              <md-select name="typeDocument" ng-model="vm.user.idDocumentTypes.idDocumentTypes" required placeholder="Tipo Documento ">
                  <md-option ng-value="{{item.idDocumentTypes}}" ng-repeat="item in vm.documentType">
                    {{item.description}}
                  </md-option>
@@ -25,12 +25,10 @@
               </div>
             </md-input-container>
 
-            <div flex="10">
-              <!-- Spacer //-->
-            </div>
 
-            <md-input-container flex="45" class="col-xs-12">
-              <!--<md-icon md-font-icon="fa fa-id-card-o"></md-icon>-->
+
+            <md-input-container flex class="col-xs-12">
+              <md-icon md-font-icon="fa fa-id-card-o fa-2x" class="hidden-xs"></md-icon>
               <label>Número de documento</label>
               <input name="document" ng-model="vm.user.numDocument" required
               ng-pattern="/^[0-9]*$/" md-maxlength="15">
@@ -43,10 +41,11 @@
           </div>
 
           <div layout="row" layout-align="space-between center">
-            <md-input-container flex="45" class="col-xs-12">
-              <!--<md-icon md-font-icon="fa fa-user-o"></md-icon>-->
+            <md-input-container flex class="col-xs-12">
+              <md-icon md-font-icon="fa fa-user-o fa-2x" class="hidden-xs"></md-icon>
               <label>Nombres</label>
-              <input ng-model="vm.user.names" name="name" ng-pattern="/^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/"
+              <input ng-model="vm.user.names" name="name"
+              ng-pattern="/^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/"
               required minlength="3" maxlength="45">
               <div ng-messages="registerForm.name.$error">
                 <div ng-message="pattern">Su nombre no puede contener números.</div>
@@ -56,10 +55,11 @@
               </div>
             </md-input-container>
 
-            <md-input-container flex="45" class="col-xs-12">
-              <!--<md-icon md-font-icon="fa fa-user-o"></md-icon>-->
+            <md-input-container flex class="col-xs-12">
+              <!-- <md-icon md-font-icon="fa fa-user-o fa-2x" class="hidden-xs"></md-icon> -->
               <label>Apellidos</label>
-              <input ng-model="vm.user.lastNames" ng-pattern="/^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/"
+              <input ng-model="vm.user.lastNames"
+              ng-pattern="/^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/"
               required minlength="3" maxlength="45" name="lastName">
               <div ng-messages="registerForm.lastName.$error">
                 <div ng-message="pattern">Su apellido no puede contener números.</div>
@@ -71,8 +71,8 @@
           </div>
 
           <div layout="row">
-            <md-input-container flex="45" class="col-xs-12">
-              <!--<md-icon md-font-icon="fa fa-unlock-alt"></md-icon>-->
+            <md-input-container flex class="col-xs-12">
+              <md-icon md-font-icon="fa fa-unlock-alt fa-2x" class="hidden-xs"></md-icon>
               <label>Contraseña</label>
               <input type="password" ng-model="vm.user.password" minlength="4"
               required name="password">
@@ -83,14 +83,11 @@
               </div>
             </md-input-container>
 
-            <div flex="10">
-              <!-- Spacer //-->
-            </div>
 
-            <md-input-container flex="45" class="col-xs-12">
-              <!--<md-icon md-font-icon="fa fa-venus-mars"></md-icon>-->
-              <label>Género</label>
-              <md-select name="gender" ng-model="vm.user.gender" required>
+            <md-input-container flex class="col-xs-12">
+              <md-icon md-font-icon="fa fa-venus-mars fa-2x" class="hidden-xs"></md-icon>
+              <!-- <label>Género</label> -->
+              <md-select name="gender" ng-model="vm.user.gender" required placeholder="Genero">
                 <md-option value="M">Masculino</md-option>
                 <md-option value="F">Femenino</md-option>
                 <md-option value="O">Otro</md-option>
@@ -102,7 +99,7 @@
           </div>
 
             <md-input-container class="md-block" class="col-xs-12">
-              <!--<md-icon md-font-icon="fa fa-envelope"></md-icon>-->
+              <md-icon md-font-icon="fa fa-envelope fa-2x" class="hidden-xs"></md-icon>
               <label>Correo</label>
               <input ng-model="vm.user.email" name="email" required minlength="10"
               maxlength="100" ng-pattern="/^.+@.+\..+$/">
@@ -115,10 +112,10 @@
             </md-input-container>
 
           <div layout="row" layout-align="space-between center">
-            <md-input-container flex="45" class="col-xs-12">
-              <!--<md-icon md-svg-src="../../../assets/images/information/colombia.svg"></md-icon>-->
-              <label>Departamento</label>
-              <md-select name="department" ng-model="vm.idDepartment" ng-change="vm.getCities()" required>
+            <md-input-container flex class="col-xs-12">
+              <md-icon md-font-icon="fa fa-globe fa-2x" class="hidden-xs"></md-icon>
+              <!-- <label>Departamento</label> -->
+              <md-select name="department" ng-model="vm.idDepartment" ng-change="vm.getCities()" required placeholder="Departamento">
                 <md-option ng-value="{{item.idDepartments}}" ng-repeat="item in vm.department">
                   {{item.name}}
                 </md-option>
@@ -128,10 +125,10 @@
               </div>
             </md-input-container>
 
-            <md-input-container flex="45" class="col-xs-12">
-              <!--<md-icon md-font-icon="fa fa-map-marker"></md-icon>-->
-              <label>Ciudad</label>
-              <md-select name="city" ng-model="vm.user.idCities.idCities" required>
+            <md-input-container flex class="col-xs-12">
+              <md-icon md-font-icon="fa fa-map-marker fa-2x" class="hidden-xs"></md-icon>
+              <!-- <label>Ciudad</label> -->
+              <md-select name="city" ng-model="vm.user.idCities.idCities" required placeholder="Ciudad">
                 <md-option ng-value="{{item.idCities}}" ng-repeat="item in vm.cities">
                   {{item.name}}
                 </md-option>
