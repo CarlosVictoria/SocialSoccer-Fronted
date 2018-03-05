@@ -3,17 +3,30 @@
 (function(){
 
 class ReservationsListComponent {
-  constructor(reservationsService, NavegateParams) {
-      this.reservations = reservationsService.query();
-      console.log(this.reservations);
-      this.NavegateParams = NavegateParams;
-
+  constructor(reservationsService, usersService, authService) {
+      this.reservationsService = reservationsService;
+      this.usersService = usersService;
+      this.authService = authService;
       this.query = {
-        limit: 5,
+        limit: 4,
         page: 1
       };
+  }
 
+  $onInit(){
+    this.filterId();
+  }
 
+  filterId(){
+    console.log("entra");
+    this.reservationsService.query({idUser: this.authService.getIdUser()}).$promise
+    .then(response => {
+      console.log("reserva OK",response);
+      this.reservations = response;
+    })
+    .catch(err => {
+      console.log("ERROR",err);
+    });
   }
 
   goUpdateResevations(idReservations){
@@ -30,11 +43,11 @@ class ReservationsListComponent {
     })
   }
 
-  
+
 
 }
 
-ReservationsListComponent.$inject = ['reservationsService'];
+//ReservationsListComponent.$inject = ['reservationsService'];
 angular.module('socialSoccerApp')
   .component('reservationsList', {
     templateUrl: 'app/reservations/reservations-list/reservations-list.html',

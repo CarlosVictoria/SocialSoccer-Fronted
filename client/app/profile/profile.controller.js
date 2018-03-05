@@ -3,13 +3,14 @@
 (function(){
 
 class ProfileComponent {
-  constructor(usersService, $state,authService, $q,  Upload, API) {
+  constructor(usersService, $state,authService, $q,  Upload, API, reservationsService) {
     this.usersService = usersService;
     this.$state = $state;
     this.authService = authService;
     this.$q = $q;
     this.Upload = Upload;
     this.API = API;
+    this.reservationsService = reservationsService;
 
 
     this.query = {
@@ -34,9 +35,22 @@ class ProfileComponent {
     })
 
 
-
+    this.filterId();
 
   }
+
+  filterId(){
+    console.log("entra");
+    this.reservationsService.query({idUser: this.authService.getIdUser()}).$promise
+    .then(response => {
+      console.log("reserva OK",response);
+      this.reservations = response;
+    })
+    .catch(err => {
+      console.log("ERROR",err);
+    });
+  }
+
   create(from) {
       this.Upload.upload({
           url: this.API + '/api/upload/user',

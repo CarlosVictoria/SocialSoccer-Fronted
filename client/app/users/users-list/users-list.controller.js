@@ -32,6 +32,7 @@
 
     cambiarEstado(item){
       this.usersService.update(item).$promise
+
       .then(response => {
         alert("Se ha efectuado el cambio de estado");
       })
