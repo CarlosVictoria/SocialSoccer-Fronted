@@ -106,7 +106,6 @@
                              <th md-column> <strong>Apellidos Usuario</strong></th>
                              <th md-column> <strong>Establecimiento</strong></th>
                              <th md-column> <strong>Cancha</strong></th>
-                   					<th md-column> <strong>Switch</strong></th>
                    					<th md-column> <strong>Actualizar</strong></th>
                    				</tr>
                    			</thead>
@@ -119,7 +118,6 @@
                              <td md-cell>{{item.idUsers.lastNames}}</td>
                              <td md-cell>{{item.idSoccerFields.idHeadquarters.idEstablishments.name}}</td>
                              <td md-cell>{{item.idSoccerFields.name}}</td>
-                   					<td md-cell><md-switch ng-model="item.activo" aria-label="Switch 2" ng-change="vm.cambiarEstado(item)"> Activo: {{item.activo}} </md-switch></td>
                              <td md-cell><a class="btn btn-primary" >Editar</a></td>
                    				</tr>
                    			</tbody>

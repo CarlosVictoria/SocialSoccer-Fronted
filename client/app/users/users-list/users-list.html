@@ -20,6 +20,7 @@
           <th md-column>Departamento</th>
           <th md-column>Ciudad</th>
 					<th md-column>Switch</th>
+					<th md-column>Estado</th>
 					<th md-column>Actualizar</th>
 				</tr>
 			</thead>
@@ -32,7 +33,8 @@
           <td md-cell>{{item.numDocument}}</td>
           <td>{{item.idCities.idDepartment.name}}</td>
           <td>{{item.idCities.name}}</td>
-					<td><md-switch ng-model="item.activo" aria-label="Switch 2" ng-change="vm.cambiarEstado(item)"> Activo: {{item.activo}} </md-switch></td>
+					<td><md-switch ng-model="item.active" aria-label="Switch 2" ng-change="vm.cambiarEstado(item)"> Activo: {{item.activo}} </md-switch></td>
+					<td>{{item.active}}</td>
           <td><a class="btn btn-primary" ui-sref="users-update({idUsers:item.idUsers})">Editar</a></td>
 				</tr>
 			</tbody>
