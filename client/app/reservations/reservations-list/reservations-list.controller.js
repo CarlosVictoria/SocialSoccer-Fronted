@@ -12,6 +12,8 @@ class ReservationsListComponent {
         limit: 5,
         page: 1
       };
+
+
   }
 
   goUpdateResevations(idReservations){
@@ -27,6 +29,8 @@ class ReservationsListComponent {
       alert("Hubo problemas al afectuar el cambio de estado");
     })
   }
+
+  
 
 }
 

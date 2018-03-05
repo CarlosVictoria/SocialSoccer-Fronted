@@ -33,6 +33,7 @@ function authService($auth,$state) {
                 var opciones = {
                   icon: "assets/notifications/llave.png",
                   body: "Sesion iniciada correctamente"
+
                 }
               notification = new Notification( "Hola, Bienvenido", opciones);
 

@@ -10,7 +10,17 @@ class ProfileComponent {
     this.$q = $q;
     this.Upload = Upload;
     this.API = API;
+
+
+    this.query = {
+      limit:4,
+      page:1
+    };
   }
+
+/*goUpdateResevations(idReservations){
+  this.NavegateParams.setData('idReservations', idReservations);
+}*/
 
   $onInit(){
     this.usersService.get({idUsers:this.authService.getIdUser()}).$promise
