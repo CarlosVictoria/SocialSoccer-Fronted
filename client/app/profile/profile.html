@@ -20,11 +20,11 @@
              </div>
            </div>
          </div>
-<!--                     <div class="section">
+                     <!-- <div class="section">
                        <h3>About Me</h3>
                        <p>Energistically administrate 24/7 portals and enabled catalysts for change. Objectively revolutionize client-centered e-commerce via covalent scenarios. Continually envisioneer.</p>
                    </div>
-                 -->                    <div class="section">
+                               <div class="section">
                    <h3>Statistics</h3>
                    <p><span class="badge">332</span> Following</p>
                    <p><span class="badge">124</span> Followers</p>
@@ -40,65 +40,69 @@
                    </ul>
                  </div>
                </div>
-             </div>
-             <div class="col-md-8">
-               <div class="profile-info-right">
-                 <ul class="nav nav-pills nav-pills-custom-minimal custom-minimal-bottom admin-menu">
-                   <li class="active"><a href="datos" ui-sref="users-update({idUsers:vm.user.idUsers})" data-target-id="datos">DATOS</a></li>
-                 </ul>
+             </div> -->
 
-                 <div class="profile-content col-xs-12 admin-content" id="datos">
-                   <table class="table table-hover">
-                     <tbody>
-                       <tr>
-                         <td>Nombre:</td>
-                         <td>{{vm.user.names}}</td>
-                       </tr>
-                       <tr>
-                         <td>Apellido:</td>
-                         <td>{{vm.user.lastNames}}</td>
-                       </tr>
-                       <tr>
-                         <td>Email:</td>
-                         <td>{{vm.user.email}}</td>
-                       </tr>
-                       <tr>
-                         <td>{{vm.user.idDocumentTypes.description}}</td>
-                         <td>{{vm.user.numDocument}}</td>
-                       </tr>
-                       <tr>
-                         <td>Departamento:  </td>
-                         <td>{{vm.user.idCities.idDepartment.name}}</td>
-                       </tr>
-                       <tr>
-                         <td>Ciudad: </td>
-                         <td>{{vm.user.idCities.name}}</td>
-                       </tr>
-                     </tbody>
-                   </table>
 
-                   <div>
-                     <a class="btn btn-primary Editar " ui-sref="users-update({idUsers:vm.user.idUsers})">Editar Perfil </a>
-                   </div>
+           </div>
+           </div>
+           <div class="col-md-8">
+             <div class="profile-info-right">
+               <ul class="nav nav-pills nav-pills-custom-minimal custom-minimal-bottom admin-menu">
+                 <br>
+                 <h2>Datos Personales</h2>
+                 <!-- <li class="active"><a href="datos" ui-sref="users-update({idUsers:vm.user.idUsers})" data-target-id="datos">DATOS</a></li> -->
+               </ul>
+
+               <div class="profile-content col-xs-12 admin-content" id="datos">
+                 <table class="table table-hover">
+                   <tbody>
+                     <tr>
+                       <td>Nombre:</td>
+                       <td>{{vm.user.names}}</td>
+                     </tr>
+                     <tr>
+                       <td>Apellido:</td>
+                       <td>{{vm.user.lastNames}}</td>
+                     </tr>
+                     <tr>
+                       <td>Email:</td>
+                       <td>{{vm.user.email}}</td>
+                     </tr>
+                     <tr>
+                       <td>{{vm.user.idDocumentTypes.description}}</td>
+                       <td>{{vm.user.numDocument}}</td>
+                     </tr>
+                     <tr>
+                       <td>Departamento:  </td>
+                       <td>{{vm.user.idCities.idDepartment.name}}</td>
+                     </tr>
+                     <tr>
+                       <td>Ciudad: </td>
+                       <td>{{vm.user.idCities.name}}</td>
+                     </tr>
+                   </tbody>
+                 </table>
+
+                 <div>
+                   <a class="btn btn-primary Editar " ui-sref="users-update({idUsers:vm.user.idUsers})">Editar Perfil </a>
                  </div>
-
-                 <div class="profile-content col-xs-12 admin-content" id="reservaciones">
-
-
-
-                   <section class="container list" ng-cloak="">
-                   <div class="panel panel-primary tabla">
-                   	<div class="panel-heading">
-                      <h2 class="">Mis Reservas</h2>
-                   		<h3 class="panel-title"><strong>Buscar</strong></h3>
-                   		<input class="letter form-control" type="text" ng-model="vm.filtro">
-                   	</div>
+               </div>
+             </div>
+           </div>
+             <div class="profile-content col-xs-12 col-md-12 admin-content" id="reservaciones">
+               <section class="container list" ng-cloak="">
+                 <div class="panel panel-primary tabla">
+                   <div class="panel-heading">
+                     <h2 class="">Mis Reservas</h2>
+                     <h3 class="panel-title"><strong>Buscar</strong></h3>
+                     <input class="letter form-control" type="text" ng-model="vm.filtro">
+                   </div>
 
                    <div class="panel-body">
-                   	<md-table-container>
-                   		<table md-table>
-                   			<thead md-head>
-                   				<tr>
+                     <md-table-container>
+                       <table md-table>
+                         <thead md-head>
+                           <tr>
                              <th md-column> <strong>Fecha de la reserva</strong></th>
                              <th md-column> <strong>Hora Inicial</strong></th>
                              <th md-column> <strong>Hora Final</strong></th>
@@ -106,44 +110,37 @@
                              <th md-column> <strong>Apellidos Usuario</strong></th>
                              <th md-column> <strong>Establecimiento</strong></th>
                              <th md-column> <strong>Cancha</strong></th>
-                   					<th md-column> <strong>Switch</strong></th>
-                   					<th md-column> <strong>Actualizar</strong></th>
-                   				</tr>
-                   			</thead>
-                   			<tbody md-body>
-                   				<tr md-row ng-repeat="item in vm.reservations | limitTo:vm.query.limit: (vm.query.page -1) * vm.query.limit | filter:vm.filtro">
-                   					<td md-cell>{{item.date | date:'yyyy-MM-dd'}}</td>
-                   					<td md-cell>{{item.initialHour | date:'HH:mm:ss'}}</td>
+                             <th md-column> <strong>Switch</strong></th>
+                             <th md-column> <strong>Actualizar</strong></th>
+                           </tr>
+                         </thead>
+                         <tbody md-body>
+                           <tr md-row ng-repeat="item in vm.reservations | limitTo:vm.query.limit: (vm.query.page -1) * vm.query.limit | filter:vm.filtro">
+                             <td md-cell>{{item.date | date:'yyyy-MM-dd'}}</td>
+                             <td md-cell>{{item.initialHour | date:'HH:mm:ss'}}</td>
                              <td md-cell>{{item.finalHour | date:'HH:mm:ss'}}</td>
                              <td md-cell>{{item.idUsers.names}}</td>
                              <td md-cell>{{item.idUsers.lastNames}}</td>
                              <td md-cell>{{item.idSoccerFields.idHeadquarters.idEstablishments.name}}</td>
                              <td md-cell>{{item.idSoccerFields.name}}</td>
-                   					<td md-cell><md-switch ng-model="item.activo" aria-label="Switch 2" ng-change="vm.cambiarEstado(item)"> Activo: {{item.activo}} </md-switch></td>
+                             <td md-cell><md-switch ng-model="item.activo" aria-label="Switch 2" ng-change="vm.cambiarEstado(item)"> Activo: {{item.activo}} </md-switch></td>
                              <td md-cell><a class="btn btn-primary" >Editar</a></td>
-                   				</tr>
-                   			</tbody>
-                   		</table>
-                   	</md-table-container>
+                           </tr>
+                         </tbody>
+                       </table>
+                     </md-table-container>
 
-                   	<md-table-pagination md-limit="vm.query.limit"
-                   	                     md-limit-options="[5, 10, 15, 20]"
-                   											 md-page="vm.query.page"
-                   											 md-total="{{vm.reservations.length}}"
-                   											 md-on-paginate="getDeserts" md-page-select>
-                   	</md-table-pagination/>
-                   </div>
-                   </div>
-
-                   	<!--MD DATA TABLE-->
-                   </section>
-
-
+                     <md-table-pagination md-limit="vm.query.limit"
+                     md-limit-options="[5, 10, 15, 20]"
+                     md-page="vm.query.page"
+                     md-total="{{vm.reservations.length}}"
+                     md-on-paginate="getDeserts" md-page-select>
+                   </md-table-pagination/>
                  </div>
-
                </div>
-             </div>
-           </div>
+
+               <!--MD DATA TABLE-->
+             </section>
 
          </div>
        </div>
