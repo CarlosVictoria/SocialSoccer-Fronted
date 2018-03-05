@@ -21,7 +21,7 @@ function authService($auth,$state) {
    		.then(response => {
    			console.log('Login ok',response);
    			$state.go('main');
-
+  
 
         var notification = null;
           if (!('Notification' in window)) {
