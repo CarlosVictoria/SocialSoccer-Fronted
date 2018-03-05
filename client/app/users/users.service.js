@@ -1,7 +1,7 @@
 'use strict';
 function usersService(API, $resource){
-  return $resource(API + '/api/users/:idUsers',{
-    id:'@idUsers'
+  return $resource(API + '/api/users/:id',{
+    id:'@id'
   },{
     update:{
       method:'PUT'

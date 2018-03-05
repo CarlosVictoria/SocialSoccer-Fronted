@@ -30,9 +30,10 @@
     }
 
 
-    cambiarEstado(item){
-      this.usersService.update(item).$promise
+    cambiarEstado(user){
 
+      console.log("ok");
+      this.usersService.update(user).$promise
       .then(response => {
         alert("Se ha efectuado el cambio de estado");
       })
