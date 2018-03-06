@@ -24,6 +24,12 @@ class ProfileComponent {
 }*/
 
   $onInit(){
+    this.Perfil();
+    this.filterId();
+
+  }
+
+  Perfil(){
     this.usersService.get({idUsers:this.authService.getIdUser()}).$promise
     .then(response=>{
       this.user = response;
@@ -33,12 +39,7 @@ class ProfileComponent {
     .catch(err => {
       console.log('Error Al Mostrar Perfil', err);
     })
-
-
-    this.filterId();
-
   }
-
   filterId(){
     console.log("entra");
     this.reservationsService.query({idUser: this.authService.getIdUser()}).$promise
