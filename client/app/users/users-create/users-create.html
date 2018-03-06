@@ -42,7 +42,7 @@
 
           <div layout="row" layout-align="space-between center">
             <md-input-container flex class="col-xs-12">
-              <md-icon md-font-icon="fa fa-user-o fa-2x" class="hidden-xs"></md-icon>
+              <md-icon md-font-icon="fa fa-user-circle fa-2x" class="hidden-xs"></md-icon>
               <label>Nombres</label>
               <input ng-model="vm.user.names" name="name"
               ng-pattern="/^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/"
@@ -85,9 +85,9 @@
 
 
             <md-input-container flex class="col-xs-12">
-              <md-icon md-font-icon="fa fa-venus-mars fa-2x" class="hidden-xs"></md-icon>
+              <md-icon md-font-icon="fa  fa-transgender fa-2x" class="hidden-xs"></md-icon>
               <!-- <label>Género</label> -->
-              <md-select name="gender" ng-model="vm.user.gender" required placeholder="Genero">
+              <md-select name="gender" ng-model="vm.user.gender" required placeholder=" Genero">
                 <md-option value="M">Masculino</md-option>
                 <md-option value="F">Femenino</md-option>
                 <md-option value="O">Otro</md-option>
@@ -99,7 +99,7 @@
           </div>
 
             <md-input-container class="md-block" class="col-xs-12">
-              <md-icon md-font-icon="fa fa-envelope fa-2x" class="hidden-xs"></md-icon>
+              <md-icon md-font-icon="fa fa-optin-monster fa-2x" class="hidden-xs"></md-icon>
               <label>Correo</label>
               <input ng-model="vm.user.email" name="email" required minlength="10"
               maxlength="100" ng-pattern="/^.+@.+\..+$/">
