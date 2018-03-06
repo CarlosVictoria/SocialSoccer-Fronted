@@ -21,14 +21,6 @@ class ReservationsComponent {
       .then(response => {
         this.awesomeThings = response.data;
       });
-    this.usersService.query().$promise
-    .then(response => {
-      console.log('users OK',response);
-      this.users = response;
-    })
-    .catch(err => {
-      console.log('ERROR',err);
-    });
 
     this.soccerFieldsService.query().$promise
     .then(response => {

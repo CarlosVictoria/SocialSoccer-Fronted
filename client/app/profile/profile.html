@@ -95,11 +95,7 @@
                            </tr>
                          </thead>
                          <tbody md-body>
-                           <tr md-row ng-repeat="item in vm.reservations | limitTo:vm.query.limit: (vm.query.page -1) * vm.query.limit | filter:vm.filtro">
-                             <td md-cell>{{item.date | date:'yyyy-MM-dd'}}</td>
-                             <td md-cell>{{item.initialHour | date:'HH:mm:ss'}}</td>
-                   					<th md-column> <strong>Actualizar</strong></th>
-                   				</tr>
+
                    			</thead>
                    			<tbody md-body>
                    				<tr md-row ng-repeat="item in vm.reservations | limitTo:vm.query.limit: (vm.query.page -1) * vm.query.limit | filter:vm.filtro">
