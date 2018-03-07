@@ -12,16 +12,22 @@ function authService($auth,$state) {
 		isUser:isUser,
 		isAuthenticated:isAuthenticated,
     getIdUser:getIdUser,
-    getRoles: getRoles
+    getRoles: getRoles,
+    getProfilePicture: getProfilePicture
 
   };
+
+  function getProfilePicture(){
+    return localStorage.getItem('avatar') ?  localStorage.getItem('avatar') : $auth.getPayload().avatar;
+  }
+
 
     function login(user,collback){
    		$auth.login(user)
    		.then(response => {
    			console.log('Login ok',response);
    			$state.go('main');
-  
+
 
         var notification = null;
           if (!('Notification' in window)) {

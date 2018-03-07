@@ -3,11 +3,12 @@
 (function(){
 
 class ProfileComponent {
-  constructor(usersService, $state,authService, $q,  Upload, API, reservationsService) {
+  constructor(usersService, $state,authService, $q,  Upload, API, reservationsService, $auth) {
     this.usersService = usersService;
     this.$state = $state;
     this.authService = authService;
     this.$q = $q;
+    this.$auth = $auth;
     this.Upload = Upload;
     this.API = API;
     this.reservationsService = reservationsService;
@@ -26,7 +27,10 @@ class ProfileComponent {
   $onInit(){
     this.Perfil();
     this.filterId();
+  }
 
+  getProfilePicture(){
+    return localStorage.getItem('avatar') ?  localStorage.getItem('avatar') :  this.$auth.getPayload().avatar;
   }
 
   Perfil(){
@@ -57,6 +61,7 @@ class ProfileComponent {
           url: this.API + '/api/upload/user',
           data: { file: this.file , idUser:this.authService.getIdUser()}
       }).then(function(resp) {
+          localStorage.setItem('avatar', resp.config.data.file.name);
           console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
           console.log('OK');
           location.reload();
