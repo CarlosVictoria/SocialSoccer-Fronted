@@ -1,4 +1,4 @@
-<!-- -- -->
+
 
 <section class="container list" ng-cloak="">
 <div class="panel panel-primary tabla">
@@ -31,11 +31,11 @@
           <td md-cell>{{item.email}}</td>
           <td md-cell>{{item.idDocumentTypes.description}}</td>
           <td md-cell>{{item.numDocument}}</td>
-          <td>{{item.idCities.idDepartment.name}}</td>
-          <td>{{item.idCities.name}}</td>
-					<td><md-switch ng-model="item.active" aria-label="Switch 2" ng-change="vm.cambiarEstado(item)"> Activo: {{item.activo}} </md-switch></td>
-					<td>{{item.active}}</td>
-          <td><a class="btn btn-primary" ui-sref="users-update({idUsers:item.idUsers})">Editar</a></td>
+          <td md-cell>{{item.idCities.idDepartment.name}}</td>
+          <td md-cell>{{item.idCities.name}}</td>
+					<td md-cell><md-switch ng-model="item.active" aria-label="Switch 2" ng-change="vm.Cancelar(item)"> Activo: {{item.activo}} </md-switch></td>
+					<td md-cell>{{item.active}}</td>
+          <td md-cell><a class="btn btn-primary" ui-sref="users-update({idUsers:item.idUsers})">Editar</a></td>
 				</tr>
 			</tbody>
 		</table>

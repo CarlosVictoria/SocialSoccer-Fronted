@@ -33,7 +33,8 @@ class ReservationsListComponent {
     this.NavegateParams.setData('idReservations', idReservations);
   }
 
-  cambiarEstados(item){
+  Cancelar(item){
+    item.estado = !item.estado;
     this.reservationsService.update(item).$promise
     .then(response => {
       alert("Se ha efectuado el cambio de estado");
@@ -42,9 +43,6 @@ class ReservationsListComponent {
       alert("Hubo problemas al afectuar el cambio de estado");
     })
   }
-
-
-
 }
 
 //ReservationsListComponent.$inject = ['reservationsService'];

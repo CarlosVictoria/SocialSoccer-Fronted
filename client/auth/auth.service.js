@@ -26,6 +26,7 @@ function authService($auth,$state) {
    		$auth.login(user)
    		.then(response => {
    			console.log('Login ok',response);
+        localStorage.removeItem('avatar');
    			$state.go('main');
 
 
