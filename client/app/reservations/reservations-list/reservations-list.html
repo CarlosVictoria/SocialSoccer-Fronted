@@ -43,6 +43,7 @@
 		<table md-table>
 			<thead md-head>
 				<tr>
+          <th md-column> <strong>llegada</strong></th>
           <th md-column> <strong>Fecha de la reserva</strong></th>
           <th md-column> <strong>Hora Inicial</strong></th>
           <th md-column> <strong>Hora Final</strong></th>
@@ -50,12 +51,14 @@
           <th md-column> <strong>Apellidos Usuario</strong></th>
           <th md-column> <strong>Establecimiento</strong></th>
           <th md-column> <strong>Cancha</strong></th>
-					<th md-column> <strong>Switch</strong></th>
-					<th md-column> <strong>Actualizar</strong></th>
+          <th md-column> <strong>Cancelar</strong></th>
+          <th md-column> <strong>Actualizar</strong></th>
 				</tr>
 			</thead>
 			<tbody md-body>
 				<tr md-row ng-repeat="item in vm.reservations  | limitTo:vm.query.limit: (vm.query.page -1) * vm.query.limit | filter:vm.filtro">
+
+          <td md-cell><md-checkbox ng-checked="exists(item, selected)" ng-click="">  </md-checkbox></td>
 					<td md-cell>{{item.date | date:'yyyy-MM-dd'}}</td>
 					<td md-cell>{{item.initialHour | date:'HH:mm:ss'}}</td>
           <td md-cell>{{item.finalHour | date:'HH:mm:ss'}}</td>
@@ -63,7 +66,15 @@
           <td md-cell>{{item.idUsers.lastNames}}</td>
           <td md-cell>{{item.idSoccerFields.idHeadquarters.idEstablishments.name}}</td>
           <td md-cell>{{item.idSoccerFields.name}}</td>
-					<td md-cell><md-switch ng-model="item.activo" aria-label="Switch 2" ng-change="vm.cambiarEstado(item)"> Activo: {{item.activo}} </md-switch></td>
+					<!-- <td md-cell><md-switch ng-model="item.activo" aria-label="Switch 2" ng-change="vm.cambiarEstado(item)"> Activo: {{item.activo}} </md-switch></td> -->
+          <td md-cell><button type="button" class="btn btn-warning" ng-click="vm.Cancelar(item) ">Cancelar</button></td>
+          <md-checkbox aria-label="Select All"
+                                 ng-checked="isChecked()"
+                                 md-indeterminate="isIndeterminate()"
+                                 ng-click="toggleAll()">
+                      <span ng-if="isChecked()">Un-</span>Select All
+                    </md-checkbox>
+
           <td md-cell><a class="btn btn-primary" >Editar</a></td>
 				</tr>
 			</tbody>
