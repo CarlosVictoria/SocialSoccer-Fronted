@@ -41,6 +41,7 @@
         alert("Hubo problemas al afectuar el cambio de estado");
       })
     }
+    
   }
 UsersListComponent.$inject = ['usersService'];
 angular.module('socialSoccerApp')
