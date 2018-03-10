@@ -29,9 +29,14 @@
       this.$state.go("users-update");
     }
 
+    // changeStatus(item) {
+    //       this.usersService.update(item).$promise
+    //           .then(response => {})
+    //           .catch(err => {})
+    //   }
 
     cambiarEstado(user){
-
+      user.active = !user.active;
       console.log("ok");
       this.usersService.update(user).$promise
       .then(response => {
@@ -41,7 +46,7 @@
         alert("Hubo problemas al afectuar el cambio de estado");
       })
     }
-    
+
   }
 UsersListComponent.$inject = ['usersService'];
 angular.module('socialSoccerApp')
