@@ -40,7 +40,19 @@ class ProfileComponent {
       console.log('Error Al Mostrar Perfil', err);
     })
   }
-  
+
+
+    Cancelar(item){
+      item.estado = !item.estado;
+      this.reservationsService.update(item).$promise
+      .then(response => {
+        alert("Se ha efectuado el cambio de estado");
+      })
+      .catch(err => {
+        alert("Hubo problemas al afectuar el cambio de estado");
+      })
+    }
+
   filterId(){
     console.log("entra");
     this.reservationsService.query({idUser: this.authService.getIdUser()}).$promise

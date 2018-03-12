@@ -57,7 +57,7 @@ class ReservationsComponent {
     this.reservationsService.save(this.reservations).$promise
     .then(response => {
       console.log('La reserva se registrado correctamente',response);
-      this.$state.go('main');
+      this.$state.go('profile');
     })
     .catch(err =>{
       console.log('ERROR',err);
