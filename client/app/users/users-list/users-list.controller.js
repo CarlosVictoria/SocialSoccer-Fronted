@@ -25,30 +25,30 @@
 
     }
     goUpdateUser(idUser){
-      this.NavegateParams.setData('idUserLog', idUser);
+      this.NavegateParams.setData('idUser', idUser);
       this.$state.go("users-update");
     }
 
-    // changeStatus(item) {
-    //       this.usersService.update(item).$promise
-    //           .then(response => {})
-    //           .catch(err => {})
-    //   }
+    changeStatus(item) {
+          this.usersService.update(item).$promise
+              .then(response => {})
+              .catch(err => {})
+      }
 
-    cambiarEstado(user){
-      user.active = !user.active;
-      console.log("ok");
-      this.usersService.update(user).$promise
-      .then(response => {
-        alert("Se ha efectuado el cambio de estado");
-      })
-      .catch(err => {
-        alert("Hubo problemas al afectuar el cambio de estado");
-      })
-    }
+    // cambiarEstado(user){
+    //   user.active = !user.active;
+    //   console.log("ok");
+    //   this.usersService.update(user).$promise
+    //   .then(response => {
+    //     alert("Se ha efectuado el cambio de estado");
+    //   })
+    //   .catch(err => {
+    //     alert("Hubo problemas al afectuar el cambio de estado");
+    //   })
+    // }
 
   }
-UsersListComponent.$inject = ['usersService'];
+UsersListComponent.$inject = ['usersService','NavegateParams', '$state'];
 angular.module('socialSoccerApp')
   .component('usersList', {
     templateUrl: 'app/users/users-list/users-list.html',

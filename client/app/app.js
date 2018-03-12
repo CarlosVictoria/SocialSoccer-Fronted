@@ -9,6 +9,7 @@ angular.module('socialSoccerApp', [
         'ui.bootstrap',
         'satellizer',
         'ngMessages',
+        'LocalStorageModule',
         'ngMaterial',
         'ngFileSaver',
         'ngFileUpload',
@@ -39,4 +40,10 @@ angular.module('socialSoccerApp', [
             .otherwise('/');
 
         $locationProvider.html5Mode(true);
+    })
+
+    .config(function(localStorageServiceProvider){
+      localStorageServiceProvider
+        .setPrefix('LSSoccial')
+        .setStorageType('localStorage');
     });
