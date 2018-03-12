@@ -20,10 +20,6 @@ class ProfileComponent {
     };
   }
 
-/*goUpdateResevations(idReservations){
-  this.NavegateParams.setData('idReservations', idReservations);
-}*/
-
   $onInit(){
     this.Perfil();
     this.filterId();
@@ -44,6 +40,7 @@ class ProfileComponent {
       console.log('Error Al Mostrar Perfil', err);
     })
   }
+  
   filterId(){
     console.log("entra");
     this.reservationsService.query({idUser: this.authService.getIdUser()}).$promise
