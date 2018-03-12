@@ -27,6 +27,7 @@ function authService($auth,$state) {
    		.then(response => {
    			console.log('Login ok',response);
         localStorage.removeItem('avatar');
+        localStorageService.set('idUserLogueado', Auth.getIdUser());
    			$state.go('main');
 
 
