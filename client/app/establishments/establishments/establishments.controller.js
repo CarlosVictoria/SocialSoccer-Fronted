@@ -3,8 +3,18 @@
 (function(){
 
 class EstablishmentsComponent {
-  constructor() {
-    this.message = 'Hello';
+  constructor(establishmentsService) {
+    this.establishmentsService = establishmentsService;
+  }
+  $onInit(){
+
+    this.establishmentsService.query().$promise
+    .then(res=>{
+      this.establecimientos=res;
+      console.log(this.establecimientos);
+    }).catch(err=>{
+      console.log(err);
+    })
   }
 }
 
@@ -12,7 +22,7 @@ angular.module('socialSoccerApp')
   .component('establishments', {
     templateUrl: 'app/establishments/establishments/establishments.html',
     controller: EstablishmentsComponent,
-    controllerAs: 'establishmentsCtrl'
+    controllerAs: 'vm'
   });
 
 })();

@@ -72,7 +72,6 @@ class UsersCreateComponent {
               var opciones = {
                 icon: "assets/notifications/4.jpg",
                 body: err.data,
-                  color:red
               }
             notification = new Notification( " ", opciones);
         } else if (Notification.permission !== 'denied') {

@@ -1,6 +1,14 @@
 'use strict';
 
+function soccerService(API, $resource) {
+	return $resource(API + '/api/soccer_fields/:id',{
+    id:'@id'
+  },{
+    update:{
+      method: 'PUT'
+    }
+  })
+}
+
 angular.module('socialSoccerApp')
-  .service('courts', function () {
-    // AngularJS will instantiate a singleton by calling "new" on this function
-  });
+  .factory('soccerService', soccerService);
