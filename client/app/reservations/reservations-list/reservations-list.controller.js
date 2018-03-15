@@ -19,7 +19,7 @@ class ReservationsListComponent {
 
   filterId(){
     console.log("entra");
-    this.reservationsService.query({idUser: this.authService.getIdUser()}).$promise
+    this.reservationsService.query().$promise
     .then(response => {
       console.log("reserva OK",response);
       this.reservations = response;

@@ -2,21 +2,14 @@
 
 (function() {
     class CourtsComponent {
-        constructor(soccerService, establishmentsService) {
+        constructor(soccerService,$stateParams) {
             this.soccerService = soccerService;
-            this.establishmentsService = establishmentsService;
+            this.$stateParams=$stateParams;
 }
 
 $onInit(){
-  this.establishmentsService.query().$promise
-  .then(res=>{
-    this.establecimientos=res;
-    console.log(this.establecimientos);
-  }).catch(err=>{
-    console.log(err);
-  })
-
-this.soccerService.query({cancha:this.idEstablishments}).$promise
+console.log("eeeeeee",this.$stateParams.id);
+this.soccerService.query({establecimiento:this.$stateParams.id}).$promise
 .then(res=>{
   this.soccerFields=res;
   console.log("canchas",this.soccerFields);
