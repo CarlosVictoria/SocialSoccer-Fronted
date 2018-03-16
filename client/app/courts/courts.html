@@ -1,59 +1,17 @@
-<div class="Work-x">
+<h3 class=" text-center">establecimiento:</h3>
 
-<article class="work-item">
-    <figure class="work-imageContainer">
-        <img class="work-image" src="assets/images/main/1.jpg" alt="Esta es la descripcion"></img>
-        <figcaption class="work-descripcion">
-            <p class="curso">A los dijes mi papa</p>
-            <p class="curso">Cr 22 # 13-45</p>
-        </figcaption>
-    </figure>
-</article>
-<article class="work-item">
-    <figure class="work-imageContainer">
-        <img class="work-image" src="../../assets/images/main/2.jpg" alt="Esta es la descripcion"></img>
-        <figcaption class="work-descripcion">
-            <p   class="curso">Bernabeu</p>
-            <p class="curso">Cr 22 # 34-28</p>
-        </figcaption>
-    </figure>
-</article>
-<article class="work-item">
-    <figure class="work-imageContainer">
-        <img class="work-image" src="../../assets/images/main/2.jpg" alt="Esta es la descripcion"></img>
-        <figcaption class="work-descripcion">
-            <p class="curso">Xilon</p>
-            <p class="curso">Cll 42 # 23-09</p>
-        </figcaption>
-    </figure>
-</article>
-<article class="work-item">
-    <figure class="work-imageContainer">
-        <img class="work-image" src="../../assets/images/main/3.jpg" alt="Esta es la descripcion"></img>
-        <figcaption class="work-descripcion">
-            <p class="curso">Picantico</p>
-            <p class="curso">Cr 28 # 20-18</p>
-        </figcaption>
-    </figure>
-</article>
-<article class="work-item">
-    <figure class="work-imageContainer">
-        <img class="work-image" src="../../assets/images/main/1.jpg" alt="Esta es la descripcion"></img>
-        <figcaption class="work-descripcion">
-            <p class="curso">Maracana</p>
-            <p class="curso">Cr 28 # 54-10</p>
-        </figcaption>
+  <div class="row">
+    <div class="col-md-4 col-xs-12" ng-repeat="item in vm.soccerFields">
+      <div class="col-lg-offset-1 " >
+        <div  class="thumbnail">
+          <img src="{{item.imagen}}"   height="100" width="100%" class="img-thumbnail top">
+          <div class="caption">
+            <h2>Describcion: {{item.name}}</h2>
+            <button type="button" class="btn btn-primary " ng-click="vm.resevation(item)">Reservar</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    </figure>
-</article>
-<article class="work-item">
-    <figure class="work-imageContainer">
-        <img class="work-image" src="../../assets/images/main/3.jpg" alt="Esta es la descripcion"></img>
-        <figcaption class="work-descripcion">
-            <p class="curso">La tocata</p>
-            <p class="curso">Cll 47 # 34-11</p>
-        </figcaption>
-
-    </figure>
-</article>
+  </div>
 </div>
