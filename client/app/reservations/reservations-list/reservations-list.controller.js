@@ -19,7 +19,7 @@ class ReservationsListComponent {
 
   filterId(){
     console.log("entra");
-    this.reservationsService.query({idUser: this.authService.getIdUser()}).$promise
+    this.reservationsService.query().$promise
     .then(response => {
       console.log("reserva OK",response);
       this.reservations = response;
@@ -45,7 +45,7 @@ class ReservationsListComponent {
   }
 }
 
-//ReservationsListComponent.$inject = ['reservationsService'];
+
 angular.module('socialSoccerApp')
   .component('reservationsList', {
     templateUrl: 'app/reservations/reservations-list/reservations-list.html',
