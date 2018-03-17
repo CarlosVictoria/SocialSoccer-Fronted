@@ -4,9 +4,10 @@
 
     class MainController {
 
-        constructor($http) {
+        constructor($http, authService) {
             this.$http = $http;
             this.awesomeThings = [];
+            this.authService = authService;
         }
 
 
@@ -20,7 +21,8 @@
     angular.module('socialSoccerApp')
         .component('main', {
             templateUrl: 'app/main/main.html',
-            controller: MainController
+            controller: MainController,
+            controllerAs: 'vm'
         });
 
 })();

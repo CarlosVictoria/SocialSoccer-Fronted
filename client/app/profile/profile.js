@@ -5,6 +5,7 @@ angular.module('socialSoccerApp')
     $stateProvider
       .state('profile', {
         url: '/profile/:idUser',
+        authenticate : true,
         template: '<profile></profile>'
       });
   });
