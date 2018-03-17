@@ -1,11 +1,11 @@
 
 
 <div class="">
-<h1 class="text-center"><strong>ESTABLECIMIENTOS</strong></h1>
+<h2 class="text-center nombre "><strong>ESTABLECIMIENTOS</strong></h2>
 
   <!-- <div class="container"> -->
-    <div class="row ">
-      <div class="col-xs-12  col-md-4 col-lg-3 img-thumbnail Establecimiento" ng-repeat="item in vm.establecimientos">
+    <div class="row color">
+      <div class="col-xs-12 col-md-4 col-lg-4   img-thumbnail Establecimiento" ng-repeat="item in vm.establecimientos">
         <h2 class=" text-center image"><strong>{{item.name}}</strong></h2>
         <div class="margen">
 
@@ -54,12 +54,20 @@
           </div>
           <a class="left carousel-control" href="#{{item.idEstablishments}}" target="_self"  data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
           <a class="right carousel-control" href="#{{item.idEstablishments}}"  target="_self" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-          <button type="button" ui-sref="courts({id:item.idEstablishments})" class="text-center btn  btn-success ver col-md-6 col-md-push-3"> Ver Canchas</button>
+          <br>
         </div>
+        <button type="button" ui-sref="courts({id:item.idEstablishments})" class="text-center btn  btn-success ver col-md-6 col-md-push-3"> Ver Canchas</button>
       </div>
 
 
 
     </div>
+
+  </div>
+
+  <div class="">
+
+    <button type="button" ui-sref="main" class=" btn  btn-warning col-xs-12  col-md-12   "><strong><h3><i class="fa fa-arrow-circle-left "></i> Volver</h3></strong> </button>
   </div>
 </div>
+<br>
