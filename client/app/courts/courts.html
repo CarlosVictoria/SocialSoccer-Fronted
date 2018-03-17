@@ -7,7 +7,7 @@
           <img src="{{item.imagen}}"   height="100" width="100%" class="img-thumbnail top">
           <div class="caption">
             <h2>Describcion: {{item.name}}</h2>
-            <button type="button" class="btn btn-primary " ng-click="vm.resevation(item)">Reservar</button>
+            <button type="button" class="btn btn-primary " ui-sref="reservations({id:item.idSoccerFields})" >Reservar</button>
           </div>
         </div>
       </div>

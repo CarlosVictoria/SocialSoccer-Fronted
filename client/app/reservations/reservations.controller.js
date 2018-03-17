@@ -3,8 +3,8 @@
 (function(){
 
 class ReservationsComponent {
-  constructor($http,soccerFieldsService,establishmentsService, $state, reservationsService, usersService, authService) {
-    this.soccerFieldsService = soccerFieldsService;
+  constructor($http,soccerService,establishmentsService, $state, reservationsService, usersService, authService, $stateParams) {
+    this.soccerService = soccerService;
     this.establishmentsService = establishmentsService;
     this.$state = $state;
     this.departmentsService = departmentsService;
@@ -14,6 +14,7 @@ class ReservationsComponent {
     this.authService = authService;
     this.$http = $http;
     this.awesome = [];
+    this.$stateParams=$stateParams;
   }
 
   $onInit(){
@@ -22,14 +23,14 @@ class ReservationsComponent {
         this.awesomeThings = response.data;
       });
 
-    this.soccerFieldsService.query().$promise
-    .then(response => {
-      console.log('SOCCER-FIELDS OK',response);
-      this.soccerFields = response;
-    })
-    .catch(err => {
-      console.log('ERROR',err);
-    });
+      console.log("este id cancha", this.$stateParams.id);
+      this.soccerService.get({id:this.$stateParams.id}).$promise
+      .then(res=>{
+        this.soccerFields=res;
+        console.log("canchas",this.soccerFields);
+      }).catch(err=>{
+        console.log(err);
+      });
 
     this.establishmentsService.query().$promise
     .then(response => {
@@ -53,6 +54,7 @@ class ReservationsComponent {
   }
 
   createReservations(){
+    this.reservations.id = {id: this.$stateParams.id};
     this.reservations.idUsers = { idUsers: this.authService.getIdUser()};
     this.reservationsService.save(this.reservations).$promise
     .then(response => {
