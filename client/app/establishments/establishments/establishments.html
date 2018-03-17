@@ -1,11 +1,19 @@
+
+
+<div class="">
 <h1 class="text-center"><strong>ESTABLECIMIENTOS</strong></h1>
 
-
-<div class="img-thumbnail">
-  <br>
   <!-- <div class="container"> -->
     <div class="row ">
-      <div class="col-xs-12 col-md-4 col-lg-4 img-thumbnail" ng-repeat="item in vm.establecimientos">
+      <div class="col-xs-12  col-md-4 col-lg-3 img-thumbnail Establecimiento" ng-repeat="item in vm.establecimientos">
+        <h2 class=" text-center image"><strong>{{item.name}}</strong></h2>
+        <div class="margen">
+
+
+          <h4 class=" text-justify ">Propietario: {{item.idUsers.names}}</h4>
+          <h4 class=" text-justify ">Direccion: {{item.address}}</h4>
+          <h4 class=" text-justify ">Canchas: {{item.numSoccerFields}} </h4>
+        </div>
         <div id="{{item.idEstablishments}}" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#{{item.idEstablishments}}" data-slide-to="0" class=""></li>
@@ -46,12 +54,8 @@
           </div>
           <a class="left carousel-control" href="#{{item.idEstablishments}}" target="_self"  data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
           <a class="right carousel-control" href="#{{item.idEstablishments}}"  target="_self" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+          <button type="button" ui-sref="courts({id:item.idEstablishments})" class="text-center btn  btn-success ver col-md-6 col-md-push-3"> Ver Canchas</button>
         </div>
-        <h3 class=" text-center">{{item.name}}</h3>
-        <h4 class=" text-center">Administrador: {{item.idUsers.names}}</h4>
-        <!-- <h4 class=" text-center">Direccion: {{item.address.headquarters.idEstablishments}}</h4> -->
-        <h5 class=" text-center">Canchas: 4 </h5>
-        <button type="button" ui-sref="courts({id:item.idEstablishments})" class="text-center btn  btn-success ver col-md-6 col-md-push-3"> Ver Canchas</button>
       </div>
 
 

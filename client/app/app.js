@@ -15,7 +15,7 @@ angular.module('socialSoccerApp', [
         'ngFileUpload',
         'md.data.table'
     ])
-    .constant('API', 'http://localhost:8080/SocialSoccer-Backend')
+    .constant('API', 'http://10.72.196.158:8080/SocialSoccer-Backend')
 
     .config(function(API, $authProvider){
        $authProvider.loginUrl = API + '/api/auth/login';
