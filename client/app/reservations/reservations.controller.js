@@ -54,7 +54,9 @@ class ReservationsComponent {
   }
 
   createReservations(){
-    this.reservations.id = {id: this.$stateParams.id};
+    console.log("ruytvuytu",this.$stateParams.id);
+    this.reservations.estado = true;
+    this.reservations.idSoccerFields = { idSoccerFields: this.$stateParams.id };
     this.reservations.idUsers = { idUsers: this.authService.getIdUser()};
     this.reservationsService.save(this.reservations).$promise
     .then(response => {
