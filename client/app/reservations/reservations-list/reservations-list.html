@@ -12,7 +12,7 @@
 		<table md-table>
 			<thead md-head>
 				<tr>
-          <th md-column> <strong>Llegada</strong></th>
+          <!-- <th md-column> <strong>Llegada</strong></th> -->
           <th md-column> <strong>Fecha de la reserva</strong></th>
           <th md-column> <strong>Hora Inicial</strong></th>
           <th md-column> <strong>Hora Final</strong></th>
@@ -27,7 +27,7 @@
 			<tbody md-body>
 				<tr md-row ng-repeat="item in vm.reservations  | limitTo:vm.query.limit: (vm.query.page -1) * vm.query.limit | filter:vm.filtro">
 
-          <td md-cell><md-checkbox ng-model="isChecked" aria-label="Finished?"></md-checkbox></td>
+          <!-- <td md-cell><md-checkbox ng-model="isChecked" aria-label="Finished?"></md-checkbox></td> -->
           <td md-cell>{{item.date | date:'yyyy-MM-dd'}}</td>
 					<td md-cell>{{item.initialHour | date:'HH:mm:ss'}}</td>
           <td md-cell>{{item.finalHour | date:'HH:mm:ss'}}</td>
@@ -35,7 +35,9 @@
           <td md-cell>{{item.idUsers.lastNames}}</td>
           <td md-cell>{{item.idSoccerFields.idHeadquarters.idEstablishments.name}}</td>
           <td md-cell>{{item.idSoccerFields.name}}</td>
-					<td md-cell><md-button class="btn btn-warning"  ng-model="item.estado" aria-label="Switch 2" ng-click="vm.Cancelar(item)" >Cancelar: {{item.estado}} </md-button></td>
+					<td md-cell><md-button class="btn btn-warning" ng-if="item.estado" ng-model="item.estado" aria-label="Switch 2" ng-click="vm.Cancelar(item)" >Cancelar </md-button></td>
+					<td md-cell><md-button class="btn btn-danger" ng-if="!item.estado"  ng-model="item.estado" aria-label="Switch 2" ng-click="vm.Cancelar(item) " >Activar </md-button></td>
+
           <!-- <td md-cell><button type="button" class="btn btn-warning" ng-click="vm.Cancelar(item) ">Cancelar</button></td> -->
           <!-- <md-checkbox aria-label="Select All"
                                  ng-checked="isChecked()"

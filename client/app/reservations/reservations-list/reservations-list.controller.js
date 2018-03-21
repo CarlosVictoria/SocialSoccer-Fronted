@@ -31,7 +31,7 @@ class ReservationsListComponent {
   }
 
   goUpdateResevations(idReservations){
-    this.NavegateParams.setData('idReservations', idReservations);
+    this.NavegateParams.setData('idReservations.idEstablishments', idReservations);
   }
 
   Cancelar(item){

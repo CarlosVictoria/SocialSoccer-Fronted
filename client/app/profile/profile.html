@@ -109,7 +109,9 @@
                              <td md-cell>{{item.idUsers.lastNames}}</td>
                              <td md-cell>{{item.idSoccerFields.idHeadquarters.idEstablishments.name}}</td>
                              <td md-cell>{{item.idSoccerFields.name}}</td>
-                             <td md-cell><md-button class="btn btn-warning"  ng-model="item.estado" aria-label="Switch 2" ng-click="vm.Cancelar(item)" >Cancelar: {{item.estado}} </md-button></td>
+                             <td md-cell><md-button class="btn btn-warning" ng-if="item.estado" ng-model="item.estado" aria-label="Switch 2" ng-click="vm.Cancelar(item) " >Cancelar </md-button></td>
+                             <td md-cell><md-button class="btn btn-danger" ng-if="!item.estado"  ng-model="item.estado" aria-label="Switch 2" ng-click="vm.Cancelar(item) " >Activar </md-button></td>
+
                              <!-- <td md-cell><md-switch ng-model="item.activo" aria-label="Switch 2" ng-change="vm.cambiarEstado(item)"> Activo: {{item.activo}} </md-switch></td> -->
                              <!-- <td md-cell><a class="btn btn-primary" >Editar</a></td> -->
                            </tr>
