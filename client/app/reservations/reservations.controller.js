@@ -61,9 +61,54 @@ class ReservationsComponent {
     this.reservationsService.save(this.reservations).$promise
     .then(response => {
       console.log('La reserva se registrado correctamente',response);
+      var notification = null;
+        if (!('Notification' in window)) {
+            // el navegador no soporta la API de notificaciones
+            alert('Su navegador no soporta la API de Notificaciones :(');
+            return;
+        } else if (Notification.permission === "granted") {
+            // Se puede emplear las notificaciones
+              var opciones = {
+                icon: "assets/notifications/reserva.png",
+                body: "Reserva registrada correctamente"
+              }
+            notification = new Notification( "Registro ok", opciones);
+
+        } else if (Notification.permission !== 'denied') {
+            // se pregunta al usuario para emplear las notificaciones
+            Notification
+                    .requestPermission(function(permission) {
+                if (permission === "granted") {
+                    notification = new Notification(
+                            "Hola Mundo");
+                }
+            });
+        }
       this.$state.go('profile');
     })
     .catch(err =>{
+      var notification = null;
+        if (!('Notification' in window)) {
+            // el navegador no soporta la API de notificaciones
+            alert('Su navegador no soporta la API de Notificaciones :(');
+            return;
+        } else if (Notification.permission === "granted") {
+            // Se puede emplear las notificaciones
+              var opciones = {
+                icon: "assets/notifications/4.jpg",
+                body: err.data,
+              }
+            notification = new Notification( " ", opciones);
+        } else if (Notification.permission !== 'denied') {
+            // se pregunta al usuario para emplear las notificaciones
+            Notification
+                    .requestPermission(function(permission) {
+                if (permission === "granted") {
+                    notification = new Notification(
+                            "");
+                }
+            });
+        }
       console.log('ERROR',err);
     });
   }
