@@ -1,17 +1,20 @@
-<h2 class=" text-center"><strong>Canchas</strong></h2>
 
-  <div class="row">
-    <div class="col-md-4 col-xs-12 col-sm-6" ng-repeat="item in vm.soccerFields">
+<h3 class=" text-center"><strong>Canchas</strong></h3>
+  <div class="row  color">
+    <br>
+    <div class=" col-xs-12 col-sm-6 col-md-10" ng-repeat="item in vm.soccerFields">
       <div class="col-lg-offset-1 " >
-        <div  class="thumbnail">
-          <img src="../../assets/images/courts/1.jpg"   height="100" width="100%" class="img-thumbnail top">
+        <div  class="thumbnail caja">
+          <img src="../../assets/images/courts/2png"   height="100" width="100%" class="img-thumbnail img">
           <div class="caption">
             <h2 class="text-center">{{item.name}}</h2>
             <button type="button" class="btn btn-primary col-md-push-3 col-md-offset-5 col-sm-offset-5 col-xs-offset-4" ui-sref="reservations({id:item.idSoccerFields})" >Reservar</button>
+
           </div>
         </div>
       </div>
     </div>
+    <button type="button" ui-sref="establishments" class=" btn  btn-warning col-xs-12  col-md-12   "><strong><h3><i class="fa fa-arrow-circle-left "></i> Volver</h3></strong> </button>
 
   </div>
 </div>
