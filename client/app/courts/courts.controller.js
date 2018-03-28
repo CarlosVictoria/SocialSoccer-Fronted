@@ -8,7 +8,7 @@
 }
 
 $onInit(){
-console.log("eeeeeee",this.$stateParams.id);
+console.log("canchas",this.$stateParams.id);
 this.soccerService.query({establecimiento:this.$stateParams.id}).$promise
 .then(res=>{
   this.soccerFields=res;

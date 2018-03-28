@@ -3,10 +3,11 @@
 (function(){
 
 class ReservationsListComponent {
-  constructor(reservationsService, usersService, authService) {
+  constructor(reservationsService, usersService, authService, $stateParams) {
       this.reservationsService = reservationsService;
       this.usersService = usersService;
       this.authService = authService;
+      this.$stateParams =$stateParams;
       this.query = {
         limit: 4,
         page: 1
@@ -30,7 +31,7 @@ class ReservationsListComponent {
   }
 
   goUpdateResevations(idReservations){
-    this.NavegateParams.setData('idReservations', idReservations);
+    this.NavegateParams.setData('idReservations.idEstablishments', idReservations);
   }
 
   Cancelar(item){
