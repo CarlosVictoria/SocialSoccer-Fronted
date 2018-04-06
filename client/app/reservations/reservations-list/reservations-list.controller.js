@@ -39,10 +39,54 @@ class ReservationsListComponent {
     item.estado = !item.estado;
     this.reservationsService.update(item).$promise
     .then(response => {
-      alert("Se ha efectuado el cambio de estado");
+      var notification = null;
+        if (!('Notification' in window)) {
+            // el navegador no soporta la API de notificaciones
+            alert('Su navegador no soporta la API de Notificaciones :(');
+            return;
+        } else if (Notification.permission === "granted") {
+            // Se puede emplear las notificaciones
+              var opciones = {
+                icon: "assets/notifications/2.png",
+                body: "Reserva Cancelada"
+              }
+            notification = new Notification( "Reserva", opciones);
+
+        } else if (Notification.permission !== 'denied') {
+            // se pregunta al usuario para emplear las notificaciones
+            Notification
+                    .requestPermission(function(permission) {
+                if (permission === "granted") {
+                    notification = new Notification(
+                            "Hola Mundo");
+                }
+            });
+        }
     })
     .catch(err => {
-      alert("Hubo problemas al afectuar el cambio de estado");
+      var notification = null;
+        if (!('Notification' in window)) {
+            // el navegador no soporta la API de notificaciones
+            alert('Su navegador no soporta la API de Notificaciones :(');
+            return;
+        } else if (Notification.permission === "granted") {
+            // Se puede emplear las notificaciones
+              var opciones = {
+                icon: "assets/notifications/2.png",
+                body: "Reserva no Cancelada"
+              }
+            notification = new Notification( "Reserva", opciones);
+
+        } else if (Notification.permission !== 'denied') {
+            // se pregunta al usuario para emplear las notificaciones
+            Notification
+                    .requestPermission(function(permission) {
+                if (permission === "granted") {
+                    notification = new Notification(
+                            "Hola Mundo");
+                }
+            });
+        }
     })
   }
 }
