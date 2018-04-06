@@ -18,9 +18,10 @@ class ReservationsListComponent {
     this.filterId();
   }
 
+
   filterId(){
-    console.log("entra");
-    this.reservationsService.query().$promise
+    console.log("entra ",this.authService.getIdUser());
+    this.reservationsService.get({idUsuario: this.authService.getIdUser()}).$promise
     .then(response => {
       console.log("reserva OK",response);
       this.reservations = response;
