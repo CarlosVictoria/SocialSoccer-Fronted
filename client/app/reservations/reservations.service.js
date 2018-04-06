@@ -6,7 +6,12 @@ function reservationsService(API, $resource) {
   },{
     update:{
       method: 'PUT'
-    }
+    },
+    get:{
+			url: API + '/api/reservations/test?idUsuario()',
+			method: 'GET',
+			isArray : true
+		}
   })
 }
 
