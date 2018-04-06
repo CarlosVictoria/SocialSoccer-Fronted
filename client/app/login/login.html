@@ -23,14 +23,19 @@
             <md-icon md-font-icon="fa fa-unlock-alt fa-2x"></md-icon>
 
             <input type="password" placeholder="Password" md-no-asterisk
-            minlength="4" required name="password" ng-model="vm.user.password">
+            minlength="4" required name="password" ng-model="vm.user.password" id="password1">
             <div ng-messages="loginForm.password.$error">
               <div ng-message-exp="['required', 'minlength']">
                 Su password debe tener al menos 4 caracteres de longitud.
               </div>
             </div>
           </md-input-container>
-
+          <div class="form-group CheckBox" layout="row" layout-align="start center">
+                   <input type="checkbox" class="checkbox" onchange="document.getElementById('password1').type = this.checked ? 'text': 'password'">
+                   <span class="Check"> Ver contraseña</span>
+                   <!--input class="Login-check" type="checkbox" id="rem">
+                   <label for="rem">Stay Signed in</label-->
+                 </div>
           <div class="Login-formBottom">
             <a href="#">¿Has olvidado tu contraseña?</a>
             <md-button class="Register-button md-raised md-primary" type="submit" ng-click="vm.login()">Iniciar</md-button>

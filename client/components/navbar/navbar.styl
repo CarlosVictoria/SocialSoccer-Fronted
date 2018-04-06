@@ -17,7 +17,18 @@
 .titulo
   border-right solid 2px white
   margin-right -20px
+  text-shadow 0 7px 3px rgba(0, 0, 0, .6)
+  padding-right 15px
 
+.img-circle
+  border-radius 2%
+
+.Drp-mnu
+  font-size 30px
+@media (min-width: 992px)
+  .col-md-push-6 {
+      left: 54%;
+    }
 .Home
   text-transform uppercase
   color white
@@ -90,3 +101,14 @@ button
   .col-md-10 {
      width: 33%;
      }
+
+ @media (min-width: 320px)
+     .open > .dropdown-menu {
+         display: inline-block;
+         margin-left: -82px;
+}
+
+@media (min-width: 320px)
+  .open > .dropdown-menu {
+    margin-left: -129px;
+  }

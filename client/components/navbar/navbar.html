@@ -2,21 +2,46 @@
 <header class="Header-container">
   <!-- <div class="container"> -->
     <div class="row Header-containerAlignV">
-      <div class="col-xs-3 col-md-5">
-        <img ui-sref="main" src="assets/images/header/logo.png" class="logo hidden-xs hidden-sm" ></img>
-        <a ui-sref="main" class=" titulo visible-xs visible-sm">Social Soccer</a>
+      <div class="col-xs-6 col-md-3">
+        <!-- <img ui-sref="main" src="assets/images/header/logo.png" class="logo hidden-xs hidden-sm" ></img> -->
+        <a ui-sref="main" class=" titulo ">Social Soccer</a>
       </div>
-      <div class="col-xs-6 col-md-6 col-md-push-3 ">
-          <a ui-sref="profile"class="hidden-xs"><img ng-if="nav.authService.isAuthenticated()" class="img-resposive img-circle hidden-xs"
-            ng-src="../../assets/images/Photos/{{nav.authService.getProfilePicture()}}"/></a>
-        <md-button ui-sref="profile" ng-if="nav.authService.isAuthenticated()" class=" btn btn-success     Usuario-2"><i class="fa fa-user"></i>
-          {{nav.authService.username() }} </md-button>
-          <md-button name="button" type="button" ng-if="nav.authService.isAuthenticated()" ng-click="!nav.authService.logout()" ui-sref="main"
-           class=" btn btn-danger hidden-xs hidden-sm     Usuario"><i class="fa fa-sign-out"></i> Cerrar Sesion</md-button>
+
+      <div class="col-xs-2 col-sm-3 col-md-3 col-md-push-6 col-sm-push-5  ">
+        <a ui-sref=""class=""><img ng-if="nav.authService.isAuthenticated()" class="img-resposive img-circle "
+          ng-src="../../assets/images/Photos/{{nav.authService.getProfilePicture()}} "/></a>
 
           <md-button ng-if="!nav.authService.isAuthenticated()" ui-sref="login" class="button btn btn-primary hidden-md hidden-sm hidden-lg"><i class="fa fa-sign-out"></i> Iniciar Sesión </md-button>
         </div>
-      <div class="col-xs-5 col-md-10 col-lg-10  ">
+
+        <!-- <md-button ui-sref="profile" ng-if="nav.authService.isAuthenticated()" class=" btn btn-success     Usuario-2"><i class="fa fa-user"></i>
+          {{nav.authService.username() }} </md-button> -->
+          <div class="col-xs-2 col-md-1 col-md-push-4 col-sm-push-3">
+              <a class="dropdown " ng-if="nav.authService.isAuthenticated()">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                  <div class="">
+                    <i class="fa fa-angle-down Drp-mnu"></i>
+                    <div class="clearfix"></div>
+                  </div>
+                </a>
+                <ul class="dropdown-menu ">
+                  <li>
+                    <a ui-sref="profile">
+                      <i class="fa fa-user"></i>
+                      Profile</a>
+                    </li>
+                    <li>
+                      <a href="#" ng-click="vm.AuthService.logout()">
+                        <!-- <i class="fa fa-sign-out"></i> -->
+                        <li name="button" type="button" ng-if="nav.authService.isAuthenticated()" ng-click="!nav.authService.logout()" ui-sref="main"
+                        class=" Usuario"><i class="fa fa-sign-out"></i>Cerrar Sesion</li>
+                      </a>
+                    </li>
+                  </ul>
+                </a>
+              </div>
+
+      <div class="col-xs-2  col-sm-push-2  ">
         <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navMenu" >
           <i class="fa fa-bars " aria-hidden="true"></i>
         </button>
@@ -46,13 +71,12 @@
               <a ui-sref="users-list"  ng-hide="!nav.authService.isAdmin()" name="page4" ui-sref-active="active" class="navbar-link text-center " ng-click="nav.ocultarCollapse()">
               <i class="fa fa-user"></i>| Mis Usuarios</a>
             </li>
-            <li>
+            <!-- <li>
               <a class="navbar-link text-center  hidden-md hidden-lg  " ui-sref="main" name="button" type="button" ng-show="nav.authService.isAuthenticated()" ng-click="!nav.authService.logout()" ui-sref="main"
                   ng-click="nav.ocultarCollapse()">
 
-
-              <i class="fa fa-sign-out"></i>| Cerrar sesion</a>
-            </li>
+              <i class="fa fa-sign-out"></i>|Cerrar sesion</a>
+            </li> -->
             <li >
               <a ui-sref="users-create"   ng-if="!nav.authService.isAdmin()" name="page5"class="navbar-link text-center visible-xs" ng-click="nav.ocultarCollapse()"><i class="fa fa-user-plus"></i>|
              Registrarse</a>
