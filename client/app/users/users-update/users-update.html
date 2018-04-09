@@ -10,7 +10,7 @@
           <br>
 
 
-          <div class="form-group col-md-6">
+          <div class="form-groupo col-md-6">
             <label class="Update-label">Tipo Documento</label>
             <select class="form-control" name="typeDocument"  ng-model="vm.user.idDocumentTypes.idDocumentTypes" required>
                <option ng-value="{{item.idDocumentTypes}}" ng-repeat="item in vm.documentType">
@@ -24,22 +24,22 @@
           </div>
 
 
-              <div class="form-group col-md-6">
+              <div class="form-groupo col-md-6">
                 <label class="Update-label">Numero de Documento</label>
                 <input class="form-control" type="text" ng-model="vm.user.numDocument">
               </div>
 
-              <div class="form-group col-md-6">
+              <div class="form-groupo col-md-6">
                 <label class="Update-label">Nombres</label>
                 <input class="form-control" type="text" ng-model="vm.user.names">
               </div>
 
-              <div class="form-group col-md-6">
+              <div class="form-groupo col-md-6">
                 <label class="Update-label">Apellidos</label>
                 <input class="form-control" type="text" ng-model="vm.user.lastNames">
               </div>
 
-              <div class="form-group col-md-6">
+              <div class="form-groupo col-md-6">
                 <label class="Update-label">Departamento</label>
                 <select class="form-control" name="department" ng-model="vm.idDepartment" ng-change="vm.getCities()">
                   <option ng-value="{{item.idDepartments}}" ng-repeat="item in vm.department">
@@ -49,7 +49,7 @@
                 </select>
               </div>
 
-              <div class="form-group col-md-6">
+              <div class="form-groupo col-md-6">
                 <label class="Update-label">Ciudad</label>
                 <select class="form-control" name="city" ng-model="vm.user.idCities.idCities">
                   <option ng-value="{{item.idCities}}" ng-repeat="item in vm.cities">
@@ -59,7 +59,7 @@
                 </select>
               </div>
 
-              <div class="form-group col-md-6">
+              <div class="form-groupo col-md-6">
                 <label class="Update-label">Género</label>
                 <select class="form-control" name="gender" ng-model="vm.user.gender">
                   <option value="M">Masculino</option>
@@ -68,13 +68,13 @@
                 </select>
               </div>
 
-              <div class="form-group col-md-6">
+              <div class="form-groupo col-md-6">
                 <label class="Update-label">Correo</label>
                 <input class="form-control" type="email" ng-model="vm.user.email">
               </div>
 
 
-          <div class="form-group text-center col-md-6">
+          <div class="form-groupo text-center col-md-6">
             <a href="" type="button" class="MarginTop btn btn-success">Cambiar contraseña</a>
           </div>
 
