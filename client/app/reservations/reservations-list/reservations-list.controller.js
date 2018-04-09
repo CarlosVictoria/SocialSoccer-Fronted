@@ -50,7 +50,7 @@ class ReservationsListComponent {
         } else if (Notification.permission === "granted") {
             // Se puede emplear las notificaciones
               var opciones = {
-                icon: "assets/notifications/2.png",
+                icon: "assets/notifications/cancelar.png",
                 body: "Reserva Cancelada"
               }
             notification = new Notification( "Reserva", opciones);
