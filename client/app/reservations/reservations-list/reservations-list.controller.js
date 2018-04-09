@@ -24,12 +24,16 @@ class ReservationsListComponent {
     .then(response => {
       console.log("reserva OK",response);
       this.reservations = response;
+      console.log('Reservaciones ', response);
     })
     .catch(err => {
       console.log("ERROR",err);
     });
   }
-
+  calcular(initialHour, finalHour, valorCancha){
+    let horas = (new Date(finalHour) - new Date(initialHour)) / (1000*60*60);
+    return horas * valorCancha;
+  }
   goUpdateResevations(idReservations){
     this.NavegateParams.setData('idReservations.idEstablishments', idReservations);
   }

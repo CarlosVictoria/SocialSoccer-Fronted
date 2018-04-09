@@ -72,7 +72,19 @@
   font-size 100px
   text-align center
   color white
+.can
+  background-color: lightgray;
+  transition:1s;
+  box-shadow: 5px 5px 5px #999;
+  color: black;
+  font-size: 30px;
+  font-family: monospace;
+  align-items: center;
+  justify-content: center;
 
+.can:hover
+  transform: rotate3d(0, 1, 0, 180deg);
+  background-color white
 .InfoContainer-button
   display flex
   justify-content flex-end
@@ -158,3 +170,136 @@
 .Sombra
   box-shadow 0px 17px 20px rgba(16, 22, 26, 0.75)
   margin-left 0px
+
+
+
+.Portfolio
+	margin-bottom 3em
+.Portfolio-image
+	background-image url(../assets/images/ContactUs/contactUs.jpg)
+	background-size cover
+	background-repeat no-repeat
+	width 100%
+	min-height 250px
+	position relative
+.Portfolio-image:before
+	content: "";
+	width 100%
+	height 100%
+	background-color #000
+	position absolute
+	opacity 0.7
+.Portfolio-title
+	color #276395
+	font-size 55px
+	font-weight 600
+	margin-top 0
+	padding-top 1em
+	text-align center
+.Portfolio .gallery-grids
+  margin 0
+.Portfolio .nav-tabs
+	border-bottom none
+	margin 20px 0 20px
+.Portfolio .nav-tabs > li
+	margin-bottom 0
+	margin 0 5px
+.Portfolio .nav-tabs > li.active > a
+	cursor pointer
+	border none
+	border-bottom 2px solid #f77924
+.Portfolio .nav-tabs > li > a
+	transition 1s
+	padding 0 0 5px
+	margin 5px 15px 0
+	border-radius 0
+	font-size 17px
+	color #646464
+	border none
+	font-weight normal
+.Portfolio .nav-tabs > li > a:hover, .Portfolio .nav-tabs > li > a:focus
+	color #000
+	background-color transparent
+.Portafolio-item
+	background-image url(../assets/images/ContactUs/contactUs.jpg)
+	background-size cover
+	background-repeat no-repeat
+	transform-style preserve-3d
+	width 100%
+	height 300px
+	position relative
+	transition .9s ease
+	box-shadow 0px 10px 15px -5px rgba(0,0,0,0.65)
+.Portafolio-item:before
+	content: "";
+	width 100%
+	height 100%
+	background-color #000
+	position absolute
+	opacity 0.7
+.Portafolio-wrap
+	-webkit-perspective 800
+	perspective 800
+.Portafolio-wrap:hover .Portafolio-item
+	transform rotateY(180deg)
+.Ahead, Back
+	color #fff
+	position absolute
+	width 100%
+	height 100%
+	backface-visibility hidden
+.Back
+	padding 0 15px
+	text-align center
+	color #fff
+	transform rotateY(180deg)
+.Back p
+	text-align justify
+.Back h4
+	padding-top 4em
+	text-align center
+.card0
+	background-image url(../assets/images/Profile/9.jpg)
+	background-size cover
+.card2
+	background-image url(../assets/images/Profile/4.jpg)
+	background-size cover
+.card3
+	background-image url(../assets/images/Profile/9.jpg)
+	background-size cover
+.card4
+	background-image url(../assets/images/Profile/4.jpg)
+	background-size cover
+/*.card5
+	background-image url(../assets/images/header/1.jpg)
+	background-size cover
+.card6
+	background-image url(../assets/images/header/1.jpg)
+	background-size cover
+.card7
+	background-image url(../assets/images/header/1.jpg)
+	background-size cover
+.card8
+	background-image url(../assets/images/header/1.jpg)
+	background-size cover
+.card9
+	background-image url(../assets/images/header/1.jpg)
+	background-size cover
+.card10
+	background-image url(../assets/images/header/1.jpg)
+	background-size cover*/
+
+.tab-content > .active
+	visibility visible
+
+@media (max-width 380px)
+	.Portfolio-image
+		min-height 90px
+	.Portfolio-image h2
+		font-size 40px
+		padding-top 2em
+@media (max-width 1200px)
+  .Portfolio-image:before
+  	position relative
+  .Portfolio-title
+  	color black
