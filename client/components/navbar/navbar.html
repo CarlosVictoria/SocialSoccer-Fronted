@@ -8,7 +8,7 @@
       </div>
 
       <div class="col-xs-2 col-sm-3 col-md-2 col-md-push-5 col-sm-push-5  ">
-        <a ui-sref=""class=""><img ng-if="nav.authService.isAuthenticated()" class="img-resposive img-circle "
+        <a ui-sref="#" class=""><img ng-if="nav.authService.isAuthenticated()" class="img-resposive img-circle "
           ng-src="../../assets/images/Photos/{{nav.authService.getProfilePicture()}} "/></a>
 
           <md-button ng-if="!nav.authService.isAuthenticated()" ui-sref="login" class="button btn btn-primary hidden-md hidden-sm hidden-lg"><i class="fa fa-sign-out"></i> Iniciar Sesión </md-button>
