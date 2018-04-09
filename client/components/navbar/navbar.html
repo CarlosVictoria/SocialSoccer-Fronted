@@ -8,23 +8,27 @@
       </div>
 
       <div class="col-xs-2 col-sm-3 col-md-2 col-md-push-5 col-sm-push-5  ">
-        <a ui-sref=""class=""><img ng-if="nav.authService.isAuthenticated()" class="img-resposive img-circle "
-          ng-src="../../assets/images/Photos/{{nav.authService.getProfilePicture()}} "/></a>
+        <md-buttom ui-sref="#"class=""><img ng-if="nav.authService.isAuthenticated()" class="img-resposive img-circle "
+          ng-src="../../assets/images/Photos/{{nav.authService.getProfilePicture()}} "/></md-buttom>
 
-          <md-button ng-if="!nav.authService.isAuthenticated()" ui-sref="login" class="button btn btn-primary hidden-md hidden-sm hidden-lg"><i class="fa fa-sign-out"></i> Iniciar Sesión </md-button>
+        </div>
+        <div class=" col-xs-4 col-xs-pull-2 col-md-12  hidden-md hidden-sm hidden-lg">
+          <md-button ng-if="!nav.authService.isAuthenticated()" ui-sref="login" class="button btn btn-primary">
+            <i class="fa fa-sign-out"></i> Iniciar Sesión </md-button>
+
         </div>
 
         <!-- <md-button ui-sref="profile" ng-if="nav.authService.isAuthenticated()" class=" btn btn-success     Usuario-2"><i class="fa fa-user"></i>
           {{nav.authService.username() }} </md-button> -->
           <div class="col-xs-2 col-md-1 col-md-push-4 col-sm-push-3">
-              <a class="dropdown " ng-if="nav.authService.isAuthenticated()">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+              <a class="dropdown" ng-if="nav.authService.isAuthenticated()" >
+                <a href="#" class="dropdown-toggle"  data-toggle="dropdown" aria-expanded="false">
                   <div class="">
-                    <i class="fa fa-angle-down Drp-mnu"></i>
+                    <i class="fa fa-angle-down Drp-mnu" ng-if="nav.authService.isAuthenticated()"></i>
                     <div class="clearfix"></div>
                   </div>
                 </a>
-                <ul class="dropdown-menu ">
+                <ul class="dropdown-menu " ng-if="nav.authService.isAuthenticated()">
                   <li>
                     <a ui-sref="profile">
                       <i class="fa fa-user"></i>

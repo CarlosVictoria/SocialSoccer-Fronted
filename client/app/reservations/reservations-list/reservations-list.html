@@ -20,6 +20,7 @@
           <th md-column> <strong>Apellidos Usuario</strong></th>
           <th md-column> <strong>Establecimiento</strong></th>
           <th md-column> <strong>Cancha</strong></th>
+					<th md-column> <strong>Total</strong></th>
           <th md-column> <strong>Cancelar</strong></th>
           <!-- <th md-column> <strong>Actualizar</strong></th> -->
 				</tr>
@@ -35,6 +36,7 @@
           <td md-cell>{{item.idUsers.lastNames}}</td>
           <td md-cell>{{item.idSoccerFields.idHeadquarters.idEstablishments.name}}</td>
           <td md-cell>{{item.idSoccerFields.name}}</td>
+					<td md-cell>{{vm.calcular(item.initialHour, item.finalHour, item.idSoccerFields.valor)}}</td>
 					<td md-cell><md-button class="btn btn-warning" ng-if="item.estado" ng-model="item.estado" aria-label="Switch 2" ng-click="vm.Cancelar(item)" >Cancelar </md-button></td>
 					<td md-cell><md-button class="btn btn-danger" ng-if="!item.estado"  ng-model="item.estado" aria-label="Switch 2" ng-click="vm.Cancelar(item) " >Activar </md-button></td>
 
