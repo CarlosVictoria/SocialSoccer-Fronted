@@ -5,10 +5,20 @@
 .AlignItemsNavbar
   display flex
   justify-content center
+.Fijo
+  color: #fff;
+  position: fixed;
+  text-align: center;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 12;
+
 
 .Header-container
   background: rgb(39, 99, 149)
   color white
+  background: #276395;
 .MenuContainer
   background #ffff
 .logo
@@ -27,6 +37,7 @@
 
 .img-circle
   border-radius 2%
+  border 1px solid
 .Drp-mnu
   font-size 30px
 @media (min-width: 992px)
@@ -61,7 +72,7 @@ input.form-control:focus
 .navbar-nav > li > a
   color black
   text-shadow: 0 7px 3px rgba(0,0,0,0.2);
-  transition: 1s all;
+  transition: 0.5s all;
 .navbar-nav > li > a:hover
   color black
   color #363636
@@ -71,7 +82,7 @@ input.form-control:focus
 .navbar-nav > li > a:hover
   color black
   background-color #f2f2f2f2
-  transform: scale3d(1.2, 1.2, 1.2);
+  transform: scale3d(1.05, 1.05, 1.05);
   /*position: relative;*/
   /*background: white*/
   border-radius 5px

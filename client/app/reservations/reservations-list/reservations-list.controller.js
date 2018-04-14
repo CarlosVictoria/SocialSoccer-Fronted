@@ -16,7 +16,21 @@ class ReservationsListComponent {
 
   $onInit(){
     this.filterId();
+    this.ObtenerPrecio();
   }
+
+
+  ObtenerPrecio(){
+  this.reservationsService.query().$promise
+    .then(response =>{
+      this.reservations.precio = response;
+      for (var i = 0; i < this.reservations.precio.length; i++) {
+        this.reservations.precio[i] = this.calcular(this.reservations.precio[i]);
+        console.log("precio ok", this.reservations.precio);
+      }
+    })
+  }
+
 
   filterId(){
     console.log("entra ",this.authService.getIdUser());
@@ -33,6 +47,8 @@ class ReservationsListComponent {
   calcular(initialHour, finalHour, valorCancha){
     let horas = (new Date(finalHour) - new Date(initialHour)) / (1000*60*60);
     return horas * valorCancha;
+    this.precio = horas * valorCancha;
+
   }
   goUpdateResevations(idReservations){
     this.NavegateParams.setData('idReservations.idEstablishments', idReservations);
@@ -61,7 +77,7 @@ class ReservationsListComponent {
                     .requestPermission(function(permission) {
                 if (permission === "granted") {
                     notification = new Notification(
-                            "Hola Mundo");
+                            "...");
                 }
             });
         }
@@ -86,7 +102,7 @@ class ReservationsListComponent {
                     .requestPermission(function(permission) {
                 if (permission === "granted") {
                     notification = new Notification(
-                            "Hola Mundo");
+                            "...");
                 }
             });
         }

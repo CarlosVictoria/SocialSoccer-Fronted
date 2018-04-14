@@ -2,6 +2,9 @@
 
 class NavbarController {
   //start-non-standard
+    ocultarCollapse(){
+      $('.navbar-collapse').collapse('hide');
+    }
 
   constructor(authService, $auth){
     this.authService = authService;

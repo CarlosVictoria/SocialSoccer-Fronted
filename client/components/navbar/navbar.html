@@ -1,27 +1,34 @@
 <!--Header-->
+<nav class="Fijo">
+
 <header class="Header-container">
   <!-- <div class="container"> -->
     <div class="row Header-containerAlignV">
+      <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navMenu" >
+        <i class="fa fa-bars " aria-hidden="true"></i>
+      </button>
       <div class="col-xs-6 col-md-3">
         <!-- <img ui-sref="main" src="assets/images/header/logo.png" class="logo hidden-xs hidden-sm" ></img> -->
         <a ui-sref="main" class=" titulo ">Social Soccer</a>
       </div>
+<div class="col-md-push-6 col-md-2">
 
-      <div class="col-xs-2 col-sm-3 col-md-2 col-md-push-5 col-sm-push-3  ">
+      <div class="col-xs-2 col-sm-3 col-md-2 col-lg-1 col-md-push-1 col-sm-push-3 col-lg-push-6  ">
 
         <md-buttom ui-sref="#"class=""><img ng-if="nav.authService.isAuthenticated()" class="img-resposive img-circle "
           ng-src="../../assets/images/Photos/{{nav.authService.getProfilePicture()}} "/></md-buttom>
 
         </div>
+
         <div class=" col-xs-4 col-xs-pull-2 col-md-12  hidden-md hidden-sm hidden-lg">
           <md-button ng-if="!nav.authService.isAuthenticated()" ui-sref="login" class="button btn btn-primary">
             <i class="fa fa-sign-out"></i> Iniciar Sesión </md-button>
         </div>
-
         <!-- <md-button ui-sref="profile" ng-if="nav.authService.isAuthenticated()" class=" btn btn-success     Usuario-2"><i class="fa fa-user"></i>
           {{nav.authService.username() }} </md-button> -->
-          <div class="col-xs-2 col-md-1 col-md-push-4 col-sm-push-1">
+          <div class="col-xs-2 col-md-1 col-md-push-3 col-lg-1 col-md-push-5 col-lg-push-7 col-sm-push-1">
               <a class="dropdown" ng-if="nav.authService.isAuthenticated()" >
+
                 <a href="#" class="dropdown-toggle"  data-toggle="dropdown" aria-expanded="false">
                   <div class="">
                     <i class="fa fa-angle-down Drp-mnu" ng-if="nav.authService.isAuthenticated()"></i>
@@ -32,7 +39,7 @@
                   <li>
                     <a ui-sref="profile">
                       <i class="fa fa-user"></i>
-                      Perfil</a>
+                      {{nav.authService.username() }}</a>
                     </li>
                     <li>
                       <a href="#" ng-click="vm.AuthService.logout()">
@@ -44,11 +51,9 @@
                   </ul>
                 </a>
               </div>
+            </div>
 
       <div class="col-xs-2 ">
-        <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navMenu" >
-          <i class="fa fa-bars " aria-hidden="true"></i>
-        </button>
       </div>
       <md-button ng-if="!nav.authService.isAuthenticated()" ui-sref="login" class="btn btn-primary col-xs-1 col-sm-10  col-md-10   hidden-xs  "><i class="fa fa-sign-out"></i>   Iniciar Sesión  </md-button>
       <md-button ng-if="!nav.authService.isAuthenticated()" ui-sref="users-create" class="btn btn-warning hidden-xs col-md-10  col-sm-10 "><i class="fa fa-user-plus"></i>  Registrarse</md-button>
@@ -112,7 +117,6 @@
         </div>
       </div>
     </div>
-  </nav>
   <div class="col-xs-11 visible-xs MarginTopSearch">
     <form>
       <div class="input-group">
@@ -124,5 +128,7 @@
           </button>
         </span>
       </div>
-    </form>
-  </div> -->
+    </form-->
+  </nav>
+  </div>
+</nav>
